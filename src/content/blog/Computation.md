@@ -24,4 +24,4 @@ Computation is a core concept in computer science because it underpins much of w
 
 Furthermore, the ability to perform computations quickly and efficiently is a critical factor in many applications, from scientific simulations to financial modeling. As such, computer scientists are constantly developing new algorithms and computational methods to improve the efficiency and accuracy of computations.
 
-IN closing, computation is a fundamental concept in computer science that involves performing a set of operations on data to produce a desired result. Understanding computation is essential for anyone working in the field of computer science, as it underpins much of what computers do and is critical for developing new applications and technologies.
+Finally, computation is a fundamental concept in computer science that involves performing a set of operations on data to produce a desired result. Understanding computation is essential for anyone working in the field of computer science, as it underpins much of what computers do and is critical for developing new applications and technologies.
