@@ -248,6 +248,14 @@ Astro Modern Personal Website is licensed under the MIT license — see the [LIC
 Made with [contrib.rocks](https://contrib.rocks).
 # personal_blog -->
 
-## Personal Blog
+## Personal Blog using Astro, typescript, html, and css
 
-Still work in progress.
+Still working on it!
+
+## Build the project using a command
+
+npm run build
+
+## Publish and run the website in localhost::3000 using a command
+
+npm run dev
