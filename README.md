@@ -1,4 +1,4 @@
-# Astro Modern Personal Website
+<!-- # Astro Modern Personal Website
 
 ![Astro Modern Personal Website](public/social_img.png)
 
@@ -246,4 +246,8 @@ Astro Modern Personal Website is licensed under the MIT license — see the [LIC
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
-# personal_blog
+# personal_blog -->
+
+## Personal Blog
+
+Still work in progress.
