@@ -262,4 +262,4 @@ npm run dev
 
 ## Visit my personal website
 
-Visit [gauravaryal.com](http://gauravaryal.com/).
+Visit [gauravaryal.com](http://gauravaryal.com/)
