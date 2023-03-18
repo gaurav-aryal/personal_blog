@@ -259,3 +259,7 @@ npm run build
 ## Publish and run the website in localhost::3000 using a command
 
 npm run dev
+
+## Visit my personal website
+
+Visit [gauravaryal.com](http://gauravaryal.com/).
