@@ -1,6 +1,6 @@
 ---
 title: "Challenges of implementing artificially intelligent systems"
-description: "Technology has been an integral part of human civilization since the advent of the wheel."
+description: "Technology has been an integral part of human civilization since the advent of the wheel..."
 pubDate: "Mar 12 2023"
 heroImage: "/post_img.webp"
 ---

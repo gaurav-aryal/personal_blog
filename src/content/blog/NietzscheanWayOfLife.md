@@ -1,6 +1,6 @@
 ---
 title: "Nietzschean way of life"
-description: "Nietzsche was a philosopher who lived a remarkable life, filled with creativity, intellectual curiosity, and an unyielding spirit."
+description: "Nietzsche was a philosopher who lived a remarkable life, filled with creativity, intellectual curiosity, and an unyielding spirit..."
 pubDate: "Mar 11 2023"
 heroImage: "/post_img.webp"
 ---

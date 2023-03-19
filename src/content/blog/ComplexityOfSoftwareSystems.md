@@ -1,6 +1,6 @@
 ---
 title: "Complexity of software systems"
-description: "Software systems have become increasingly complex over the years."
+description: "Software systems have become increasingly complex over the years..."
 pubDate: "Mar 12 2023"
 heroImage: "/post_img.webp"
 ---

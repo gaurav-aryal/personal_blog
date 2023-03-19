@@ -1,6 +1,6 @@
 ---
 title: "Space Exploration and Way to the Stars"
-description: "Space exploration has been a topic of fascination for humans for centuries."
+description: "Space exploration has been a topic of fascination for humans for centuries..."
 pubDate: "Mar 12 2023"
 heroImage: "/post_img.webp"
 ---

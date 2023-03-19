@@ -1,6 +1,6 @@
 ---
 title: "ChatGPT and content generation"
-description: "Software systems have become increasingly complex over the years."
+description: "As a content creator, I’m always on the lookout for new and innovative ways to generate high-quality content for my website..."
 pubDate: "Mar 12 2023"
 heroImage: "/post_img.webp"
 ---

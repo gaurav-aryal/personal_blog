@@ -1,6 +1,6 @@
 ---
 title: "Lessons learned as a software developer"
-description: "As a software developer, I have learned many technical lessons throughout my career."
+description: "As a software developer, I have learned many technical lessons throughout my career..."
 pubDate: "Mar 10 2023"
 heroImage: "/post_img.webp"
 ---

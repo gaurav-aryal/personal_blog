@@ -1,6 +1,6 @@
 ---
 title: "Leonardo Da Vinci By Walter Isaacson"
-description: "Leonardo da Vinci, a true Renaissance man, was not only a painter but also a scientist, inventor, engineer, and philosopher."
+description: "Leonardo da Vinci, a true Renaissance man, was not only a painter but also a scientist, inventor, engineer, and philosopher..."
 pubDate: "Mar 12 2023"
 heroImage: "/post_img.webp"
 ---

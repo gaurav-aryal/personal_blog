@@ -1,6 +1,6 @@
 ---
 title: "Can machines think?"
-description: "Software systems have become increasingly complex over the years."
+description: "The question of whether machines can think has been a topic of debate for decades..."
 pubDate: "Mar 12 2023"
 heroImage: "/post_img.webp"
 ---

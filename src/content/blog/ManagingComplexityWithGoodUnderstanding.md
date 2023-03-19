@@ -1,6 +1,6 @@
 ---
 title: "Managing complexity with good understanding and implementation of Data Structures and Architectures"
-description: "As a software developer, there are two crucial skills you need to master to become successful."
+description: "As a software developer, there are two crucial skills you need to master to become successful..."
 pubDate: "Mar 12 2023"
 heroImage: "/post_img.webp"
 ---
