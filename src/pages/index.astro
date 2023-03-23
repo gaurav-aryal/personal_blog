@@ -7,7 +7,13 @@ const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const last_posts = posts.slice(0, 3);
+const last_posts = posts.slice(0,7);
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const last_projects = projects;
 ---
 
 <BaseLayout>
@@ -27,6 +33,24 @@ const last_posts = posts.slice(0, 3);
         <!-- <a href="https://github.com/gaurav-aryal/personal_blog" target="_blank" class="btn btn-outline ml-5"> Get This template</a> -->
       </div>
     </div>
+
+    <div>
+      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from projects</div>
+    </div>
+  
+    {
+      last_projects.map((projects) => (
+        <HorizontalCard
+          title={projects.data.title}
+          img={projects.data.heroImage}
+          desc={projects.data.description}
+          url={"/projects/" + projects.slug}
+          target="_self"
+        />
+        <div class="divider my-0"></div>
+      ))
+    }  
+
     <div>
       <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
     </div>
@@ -44,7 +68,7 @@ const last_posts = posts.slice(0, 3);
       ))
     }
 
-  <div>
+  <!-- <div>
     <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
   </div>
 
@@ -69,6 +93,6 @@ const last_posts = posts.slice(0, 3);
   desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   url="#"
   badge="FOSS"
-  />
+  /> -->
 
 </BaseLayout>
