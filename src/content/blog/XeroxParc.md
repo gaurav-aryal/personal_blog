@@ -23,8 +23,3 @@ Robert Metcalfe is the inventor of Ethernet, which is a widely used technology f
 William Newman is known for his contributions to the development of the first personal computers. He co-founded the company ICL, which developed the ICL 2900 series of mainframe computers, and also co-founded Acorn Computers, which produced the Acorn Archimedes, the first personal computer to use the ARM processor. Newman's work on personal computers helped to pave the way for the computing revolution that we see today.
 
 Finally, John Warnock is best known as the co-founder of Adobe Systems, which produced some of the most widely used software applications for graphics and publishing. Warnock was also instrumental in the development of the PostScript language, which revolutionized the way text and graphics are printed. His contributions to the development of software for graphics and publishing have had a lasting impact on the industry.
-
-
-
-
-
