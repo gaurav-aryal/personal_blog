@@ -5,7 +5,7 @@ pubDate: "Mar 23 2023"
 heroImage: "/post_img.webp"
 ---
 
-Please find the GitHub repo at <a href="https://github.com/gaurav-aryal/RobinhoodAutoTradingBot" target="_blank">RobinhoodTradingBot</a>. Please download the code, make changes, and have fun!
+Please find the GitHub repo at <a href="https://github.com/gaurav-aryal/RobinhoodAutoTradingBot" target="_blank">RobinhoodTradingBot</a>, download the code, make changes, and have fun!
 
 Building a Robinhood trading bot in Python involves using the Robinhood API to programmatically access your brokerage account, analyze market data, generate trading signals, and execute trades automatically. Here are the general steps to follow:
 
