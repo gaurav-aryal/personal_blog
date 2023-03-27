@@ -4,7 +4,7 @@ description: "provides a step-by-step roadmap for beginners on how to build an A
 pubDate: "Mar 26 2023"
 heroImage: "/post_img.webp"
 ---
-Building an Artificial General Intelligence (AGI) system with neural networks and transformer architecture is a challenging task and possibly an impossible task for an individual. However, with the right approach and data, it's possible to develop a system that can perform a small range of intellectual tasks. We can argue if the system doesn't perform sufficiently human-level intellectual task or beyond can it be considered AGI? The intention of this blog post is not to delve into those questions, but to give overview of implementing the artifically intelligent system that could potentially perform human-level or beyond intellectual tasks.
+Building an Artificial General Intelligence (AGI) system with neural networks and transformer architecture is a challenging task and possibly an impossible task for an individual. However, with the right approach and data, it's possible to develop a system that can perform a small range of intellectual tasks. We can argue if the system doesn't perform sufficiently human-level intellectual task or beyond can it be considered AGI? The intention of this blog post is not to delve into those questions, but to give overview of implementing the artifically intelligent system that could potentially perform human-level or beyond intellectual tasks with further iterations and improvements.
 
 Here's a roadmap that can help you get started:
 
