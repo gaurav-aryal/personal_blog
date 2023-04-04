@@ -1,7 +1,7 @@
 ---
 title: "Living in the Now"
 description: "There is nothing but now..."
-pubDate: "Apr 2 2023"
+pubDate: "Mar 31 2023"
 heroImage: "/post_img.webp"
 ---
 
