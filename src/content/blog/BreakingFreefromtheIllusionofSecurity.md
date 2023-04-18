@@ -1,7 +1,7 @@
 ---
 title: "Breaking Free from the Illusion of Security"
 description: "How seeking false security in external factors such as a stable job, busyness, and money can hinder us from pursuing what truly matters in our lives..."
-pubDate: "Apr 5 2023"
+pubDate: "Apr 14 2023"
 heroImage: "/post_img.webp"
 ---
 It's easy to fall into the trap of seeking security in external factors such as a stable job, busyness, and money. These factors can provide a false sense of comfort and familiarity, but they can also become barriers that keep us from pursuing what is truly important and meaningful in our lives.
