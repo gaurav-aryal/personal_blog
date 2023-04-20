@@ -1,5 +1,5 @@
 ---
-title: "Taking Extreme Ownership, Being Radically Openminded, and Bitter Truthful"
+title: "Taking Extreme Ownership, Being Radically Openminded, and Bitter Truthful With Yourself"
 description: "On taking extreme ownership, radically openminded, and bitterly truthful..."
 pubDate: "Apr 15 2023"
 heroImage: "/post_img.webp"
@@ -16,7 +16,7 @@ Being radically openminded means being willing to consider different perspective
 
 Radical open-mindedness also involves actively seeking feedback and constructive criticism, and using them as opportunities for growth and improvement. Instead of being defensive or resistant to feedback, we embrace it as a valuable source of insights and learning. This allows us to continuously evolve and adapt, making us more resilient and agile in the face of change.
 
-**Bitterly Truthful:**  
+**Bitterly Truthful With Yourself:**  
 Being bitterly truthful means being honest with ourselves and others, even if the truth is uncomfortable or hard to hear. It's about facing reality head-on, acknowledging the facts, and not sugar-coating or avoiding difficult truths. By being truthful, we create a foundation of trust and authenticity, which enables effective communication, problem-solving, and decision-making.
 
 Being bitterly truthful also means being willing to confront our own biases, assumptions, and blind spots. It's about questioning our own beliefs and challenging our own perspectives to gain a deeper understanding of ourselves and the world around us. This helps us make more informed choices and avoid falling into the trap of confirmation bias or echo chambers.

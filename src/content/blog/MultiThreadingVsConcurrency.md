@@ -16,7 +16,7 @@ Another difference between the two is that multi-threading is generally consider
 However, multi-threading also has its downsides. One of the main challenges of multi-threading is ensuring that threads do not interfere with each other, which can lead to synchronization and deadlock issues. In addition, multi-threaded programs can be difficult to debug and can suffer from performance issues if not implemented correctly.
 
 An example of implementing **multi-threading** in Python:  
-<pre><code class="language-python">
+```python
 import threading
 
 def print_numbers():
@@ -37,13 +37,13 @@ thread1.join()
 thread2.join()
 
 print("Done!")
-</code></pre>
+```
 In this example, we import the threading module and define two functions that will be run concurrently: *print_numbers* and *print_letters*. We then create two threads, *thread1* and *thread2*, and assign each function to be run by its respective thread.  
 Next, we start the threads with *thread1.start()* and *thread2.start()*. The *join()* method is used to make sure that both threads finish before moving on to the *print("Done!")* statement.  
 When we run this code, we will see that the numbers and letters are printed in an interleaved manner, demonstrating the concept of multi-threading.  
 
 An example of **concurrency** in Python using the asyncio library:
-<pre><code class="language-python">
+```python
 import asyncio
 
 async def task_one():
@@ -60,6 +60,6 @@ async def main():
     await asyncio.gather(task_one(), task_two())
 
 asyncio.run(main())
-</code></pre>
+```
 In this example, we define two tasks *(task_one and task_two)* that each take a certain amount of time to complete. We then define a main function that uses *asyncio.gather* to run both tasks concurrently.  
 When we run the program, we'll see that the tasks start and finish at different times, but they're both executed "at the same time" thanks to the concurrent execution provided by *asyncio*.

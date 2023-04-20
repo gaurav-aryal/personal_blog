@@ -17,7 +17,7 @@ The time complexity of bubble sort is O(n^2) in the worst case scenario, and O(n
 
 Here is the Python code for bubble sort:
 
-<pre><code class="language-python">
+```python
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
@@ -28,7 +28,7 @@ def bubble_sort(arr):
 arr = [64, 34, 25, 12, 22, 11, 90]
 bubble_sort(arr)
 print("Sorted array is:", arr)
-</code></pre>
+```
 
 **Selection Sort**  
 Selection sort is another simple sorting algorithm that works by selecting the smallest element from the unsorted part of the list and placing it at the beginning of the list. It repeats this process until the entire list is sorted.
@@ -37,7 +37,7 @@ The time complexity of selection sort is O(n^2) in the worst case scenario, and 
 
 Here is the Python code for selection sort:
 
-<pre><code class="language-python">
+```python
 def selection_sort(arr):
     n = len(arr)
     for i in range(n):
@@ -50,7 +50,7 @@ def selection_sort(arr):
 arr = [64, 34, 25, 12, 22, 11, 90]
 selection_sort(arr)
 print("Sorted array is:", arr)
-</code></pre>
+```
 
 **Insertion Sort**  
 Insertion sort is a simple sorting algorithm that works by inserting each element in its proper place in the sorted part of the list. It repeats this process until the entire list is sorted.
@@ -59,7 +59,7 @@ The time complexity of insertion sort is O(n^2) in the worst case scenario, and 
 
 Here is the Python code for insertion sort:
 
-<pre><code class="language-python">
+```python
 def insertion_sort(arr):
     n = len(arr)
     for i in range(1, n):
@@ -73,7 +73,7 @@ def insertion_sort(arr):
 arr = [64, 34, 25, 12, 22, 11, 90]
 insertion_sort(arr)
 print("Sorted array is:", arr)
-</code></pre>
+```
 
 **Merge Sort**  
 Merge sort is a divide and conquer algorithm that works by dividing the list into two halves, sorting each half separately, and then merging them back together in the correct order.
@@ -82,7 +82,7 @@ The time complexity of merge sort is O(nlogn) in all scenarios, making it a very
 
 Here is the Python code for merge sort:
 
-<pre><code class="language-python">
+```python
 def merge_sort(arr):
     if len(arr) > 1:
         mid = len(arr)//2
@@ -116,7 +116,7 @@ def merge_sort(arr):
 arr = [64, 34, 25, 12, 22, 11, 90]
 merge_sort(arr)
 print("Sorted array is:", arr)
-</code></pre>
+```
 
 **Quick Sort**  
 Quick sort is a divide and conquer algorithm that works by selecting a pivot element and partitioning the list around the pivot such that all elements less than the pivot are on one side and all elements greater than the pivot are on the other side. It then recursively applies the same process to the two resulting sub-lists.
@@ -125,7 +125,7 @@ The time complexity of quick sort is O(n^2) in the worst case scenario, and O(nl
 
 Here is the Python code for quick sort:
 
-<pre><code class="language-python">
+```python
 def partition(arr, low, high):
     i = (low-1)
     pivot = arr[high]
@@ -152,7 +152,7 @@ arr = [64, 34, 25, 12, 22, 11, 90]
 n = len(arr)
 quick_sort(arr, 0, n-1)
 print("Sorted array is:", arr)
-</code></pre>
+```
 
 **Heap Sort**  
 Heap sort is a sorting algorithm that works by building a heap data structure from the list and then repeatedly extracting the maximum element from the heap and placing it at the end of the list.
@@ -161,7 +161,7 @@ The time complexity of heap sort is O(nlogn) in all scenarios, making it an effi
 
 Here is the Python code for heap sort:
 
-<pre><code class="language-python">
+```python
 def heapify(arr, n, i):
     largest = i
     l = 2 * i + 1
@@ -181,4 +181,4 @@ def heap_sort(arr):
     n = len(arr)
 
     for i
-</code></pre>
+```
