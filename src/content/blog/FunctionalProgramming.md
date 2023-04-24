@@ -20,7 +20,7 @@ def circle_area(radius):
 **Higher-order functions**  
 A higher-order function is a function that takes one or more functions as arguments or returns a function as its result. Higher-order functions allow us to abstract over patterns of computation and express complex operations in a concise and modular way. Here's an example of a higher-order function that applies a function to each element of a list:
 
-<pre><code class="language-go">
+```python
 def map(func, lst):
     return [func(x) for x in lst]
 ```
@@ -38,7 +38,7 @@ print(squared_lst)  # [1, 4, 9, 16, 25]
 **Lambda functions**  
 A lambda function is a small anonymous function that can be defined inline. Lambda functions are useful when we need to pass a simple function as an argument to a higher-order function without defining a separate function. Here's an example of a lambda function that adds two numbers:
 
-<pre><code class="language-csharp">
+```python
 add = lambda x, y: x + y
 ```
 
