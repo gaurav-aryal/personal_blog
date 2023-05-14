@@ -14,4 +14,4 @@ Furthermore, research has also shown that comparing yourself to others can lead 
 
 Instead of comparing yourself to others, it is important to focus on your own journey and progress. Set personal goals for yourself and strive to improve and grow in your own way. Recognize that everyone has their own unique journey, and it is not productive to compare your progress to others.
 
-In conclusion, comparing yourself to others can lead to negative emotions, decreased motivation, and a distorted sense of reality. Rather than focusing on external factors, focus on your own personal growth and progress. Remember that you are unique and valuable in your own way, and no one else's journey should dictate your own.
+Thus, comparing yourself to others can lead to negative emotions, decreased motivation, and a distorted sense of reality. Rather than focusing on external factors, focus on your own personal growth and progress. Remember that you are unique and valuable in your own way, and no one else's journey should dictate your own.
