@@ -1,6 +1,6 @@
 ---
 title: "Immanuel Kant's Critique of Reason and the Limits of Human Experience"
-description: "Kant's illuminating work on the inherent limitations of human experience and the boundaries of our knowledge...."
+description: "Kant's illuminating work on the inherent limitations of human experience and the boundaries of our knowledge..."
 pubDate: "May 17 2023"
 heroImage: "/post_img.webp"
 ---
