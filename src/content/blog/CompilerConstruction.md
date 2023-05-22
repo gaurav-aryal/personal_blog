@@ -1,7 +1,7 @@
 ---
-title: "Adapt Or Die Trying"
-description: "The significance of learning and adapting to new ways by drawing parallels with natural evolution and how it is essential for growth and survival, both personally and professionally..."
-pubDate: "May 13 2023"
+title: "Compiler Construction"
+description: "Building a compiler using tree-based expression representation: Exploring the concepts of symbol tables, intermediate representations, and code generation, and their role in constructing efficient and robust compilers..."
+pubDate: "May 19 2023"
 heroImage: "/post_img.webp"
 ---
 Building a compiler is an exciting endeavor that involves translating high-level programming code into executable machine instructions. One crucial aspect of compiler design is the representation of expressions, such as method names and operations. In this blog post, we will explore the concept of using tree structures to represent expressions in a compiler, discussing the benefits and steps involved in building a compiler using tree-based expression representation.
