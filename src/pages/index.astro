@@ -14,6 +14,12 @@ const projects = (await getCollection('projects')).sort(
 );
 
 const last_projects = projects;
+
+const neuralNexusDevelopments = (await getCollection('neuralnexus')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const last_neuralNexusProjects = neuralNexusDevelopments;
 ---
 
 <BaseLayout>
@@ -21,7 +27,7 @@ const last_projects = projects;
     <div class="pb-12 mt-5">
       <div class="text-xl py-1">Hey there 👋</div>
       <div class="text-5xl font-bold">I'm Gaurav Aryal</div>
-      <div class="text-3xl py-3 font-bold">Software Developer, AI Engineer, & Enterpreneur</div>
+      <div class="text-3xl py-3 font-bold">Software Developer & AI Engineer</div>
       <div class="py-2">
         <text class="text-lg">
           Collection of interesting ideas and projects. Still in progress!
@@ -33,6 +39,23 @@ const last_projects = projects;
         <!-- <a href="https://github.com/gaurav-aryal/personal_blog" target="_blank" class="btn btn-outline ml-5"> Get This template</a> -->
       </div>
     </div>
+
+    <div>
+      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from Neural Nexus</div>
+    </div>
+  
+    {
+      last_neuralNexusProjects.map((neuralNexus) => (
+        <HorizontalCard
+          title={neuralNexus.data.title}
+          img={neuralNexus.data.heroImage}
+          desc={neuralNexus.data.description}
+          url={"/projects/" + neuralNexus.slug}
+          target="_self"
+        />
+        <div class="divider my-0"></div>
+      ))
+    }  
 
     <div>
       <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from projects</div>
