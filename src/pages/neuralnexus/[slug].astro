@@ -1,0 +1,24 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import { NeuralNexusSchema } from '../../content/config';
+import NeuralNexusLayout from '../../layouts/NeuralNexusLayout.astro';
+
+export async function getStaticPaths() {
+    const neuralnexusEntries = await getCollection('neuralnexus');
+    return neuralnexusEntries.map(entry => ( { 
+        params: { slug: entry.slug }, props: { entry },
+    } ));
+}
+
+interface Props {
+    entry: CollectionEntry<"neuralnexus">;
+}
+
+const { entry } = Astro.props;
+const neuralnexus : NeuralNexusSchema = entry.data;
+const { Content } = await entry.render();
+---
+
+<NeuralNexusLayout title={neuralnexus.title} description={neuralnexus.description} pubDate={neuralnexus.pubDate} heroImage={neuralnexus.heroImage} updatedDate={neuralnexus.updatedDate}>
+    <Content/>
+</NeuralNexusLayout>
