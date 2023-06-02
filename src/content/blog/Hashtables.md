@@ -5,7 +5,7 @@ pubDate: "May 31 2023"
 heroImage: "/post_img.webp"
 ---
 **Introduction:**  
-Hashtables, also known as dictionaries, are fundamental data structures in computer science that provide efficient key-value storage and retrieval. In this blog post, we will explore the concept of hashtables, their underlying principles, and how to leverage them in Python to solve real-world problems. We will also provide a practical implementation of a hashtable using Python code.
+Hashtables are fundamental data structures in computer science that provide efficient key-value storage and retrieval. In this blog post, we will explore the concept of hashtables, their underlying principles, and how to leverage them in Python to solve real-world problems. We will also provide a practical implementation of a hashtable using Python code.
 
 **Understanding Hashtables:**  
 A hashtable is a data structure that enables fast retrieval of values based on a unique key. It achieves this by using a hashing function to map the keys to specific indices in an array, known as buckets or slots. Each slot holds a reference to the corresponding value.
