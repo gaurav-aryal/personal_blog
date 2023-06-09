@@ -6,12 +6,12 @@ heroImage: "/post_img.webp"
 ---
 Containerization and Kubernetes have revolutionized the way modern software applications are developed, deployed, and managed. In this technical blog post, we will delve deep into the concepts, principles, and practical aspects of containerization and Kubernetes, exploring how they work together to enable scalable, flexible, and highly available application deployments.
 
-1. **Understanding Containerization:**
+1. **Understanding Containerization:**  
 **Containerization:** A powerful technology that packages applications and their dependencies into self-contained, isolated units known as containers.  
 **Docker:** The most popular containerization platform, providing a lightweight and portable runtime environment for applications.  
 **Benefits of Containerization:** Efficient resource utilization, faster deployment, improved scalability, and simplified software distribution.  
 
-2. **Exploring Kubernetes:**
+2. **Exploring Kubernetes:**  
 **Kubernetes:** An open-source container orchestration platform for automating the deployment, scaling, and management of containerized applications.  
 **Key Concepts:** Pods, Services, Deployments, Replication Controllers, and StatefulSets.  
 **Cluster Architecture:** Master node, worker nodes, and the role of kubelet, kube-proxy, and kube-scheduler.  
