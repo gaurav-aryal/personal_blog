@@ -20,6 +20,12 @@ const neuralNexusDevelopments = (await getCollection('neuralnexus')).sort(
 );
 
 const last_neuralNexusProjects = neuralNexusDevelopments;
+
+const financePosts = (await getCollection('finance')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const financialPosts = financePosts.slice(0,3);
 ---
 
 <BaseLayout>
@@ -90,6 +96,23 @@ const last_neuralNexusProjects = neuralNexusDevelopments;
         <div class="divider my-0"></div>
       ))
     }
+
+<div>
+  <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from Finance</div>
+</div>
+
+{
+  financialPosts.map((finance) => (
+    <HorizontalCard
+      title={finance.data.title}
+      img={finance.data.heroImage}
+      desc={finance.data.description}
+      url={"/finance/" + finance.slug}
+      target="_self"
+    />
+    <div class="divider my-0"></div>
+  ))
+}
 
   <!-- <div>
     <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>

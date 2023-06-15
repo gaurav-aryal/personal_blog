@@ -16,6 +16,7 @@
       <li><a id="neuralnexus" href="/neuralnexus">Neural Nexus</a></li>
       <li><a id="projects" href="/projects">Projects</a></li>
       <li><a id="blog" href="/blog/">Blog</a></li>
+      <li><a id="finance" href="/finance">Finance</a></li>
       <!-- <li><a id="cv" href="/cv">CV</a></li> --removed CV for now -->
       <li><a id="services" href="/services">Services</a></li>
       <li><a id="store" href="/store">Store</a></li>
@@ -109,12 +110,13 @@
   const storeLink = document.getElementById("store");
   const blogLink = document.getElementById("blog");
   const cvLink = document.getElementById("cv");
+  const financeLink = document.getElementById("finance");
 
   var isHome = true;
 
   const url = window.location.href;
 
-  const pages = [neuralnexusLink, projectsLink, servicesLink, storeLink, blogLink, cvLink];
+  const pages = [neuralnexusLink, projectsLink, servicesLink, storeLink, blogLink, cvLink, financeLink];
 
   pages.forEach((elem) => {
     if (url.includes(elem.id)) {

@@ -1,0 +1,24 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import { FinanceSchema } from '../../content/config';
+import FinanceLayout from '../../layouts/FinanceLayout.astro';
+
+export async function getStaticPaths() {
+    const financeEntries = await getCollection('finance');
+    return financeEntries.map(financeEntry => ( { 
+        params: { slug: financeEntry.slug }, props: { financeEntry },
+    } ));
+}
+
+interface Props {
+    financeEntry: CollectionEntry<"finance">;
+}
+
+const { financeEntry } = Astro.props;
+const financePost : FinanceSchema = financeEntry.data;
+const { Content } = await financeEntry.render();
+---
+
+<FinanceLayout title={financePost.title} description={financePost.description} pubDate={financePost.pubDate} heroImage={financePost.heroImage} updatedDate={financePost.updatedDate}>
+    <Content/>
+</FinanceLayout>

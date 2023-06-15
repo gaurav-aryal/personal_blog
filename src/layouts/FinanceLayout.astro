@@ -1,10 +1,10 @@
 ---
-import { NeuralNexusSchema } from "../content/config";
+import { FinanceSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 
-export interface Props extends NeuralNexusSchema {}
+export interface Props extends FinanceSchema {}
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 dayjs.extend(localizedFormat);
