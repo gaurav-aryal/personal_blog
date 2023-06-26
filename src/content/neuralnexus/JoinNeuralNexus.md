@@ -4,7 +4,6 @@ description: "Join Neural Nexus: Pioneering the Future of Artificial General Int
 pubDate: "Mar 23 2023"
 heroImage: "/post_img.webp"
 ---
-**Why Neural Nexus?**  
 1. **Pioneering Research Environment**  
 2. **Highly Technical Team**  
 3. **Ambition and Impact**  
