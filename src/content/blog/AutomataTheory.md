@@ -26,7 +26,7 @@ The Chomsky hierarchy categorizes formal grammars based on their expressive powe
 
 **Applications of Automata Theory:**  
 Automata theory finds applications in various fields, including:  
-**a. Compiler Design:** Lexical analysis and parsing phases of a compiler use automata concepts to process source code.
-**b. Natural Language Processing:** Parsing sentences and language recognition tasks leverage context-free grammars and PDAs.
-**c. Software Verification:** Formal verification techniques use automata to verify correctness in software systems.
-**d. DNA Sequence Analysis:** Automata are employed to analyze genetic sequences and identify patterns.
+**a. Compiler Design:** Lexical analysis and parsing phases of a compiler use automata concepts to process source code.  
+**b. Natural Language Processing:** Parsing sentences and language recognition tasks leverage context-free grammars and PDAs.  
+**c. Software Verification:** Formal verification techniques use automata to verify correctness in software systems.  
+**d. DNA Sequence Analysis:** Automata are employed to analyze genetic sequences and identify patterns.  
