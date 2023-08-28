@@ -23,6 +23,4 @@ You can find the complete source code and documentation for the Weather API on G
 
 Weather data is a valuable resource that can enhance the functionality and user experience of your applications and services. Our Weather API provides a straightforward way to access this data, perform geocoding tasks, and retrieve location coordinates, making it a versatile tool for developers in various industries.
 
-Ready to harness the power of weather data in your projects? Check out the Weather API on GitHub, explore the documentation, and start integrating weather information into your applications today. With the API, you'll have the insights you need to create smarter, more user-friendly solutions.
-
 GitHub Repository Link: https://github.com/gaurav-aryal/WeatherAPI
