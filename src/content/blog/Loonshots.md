@@ -1,6 +1,6 @@
 ---
-title: "The Wealth of Nations by Adam Smith: A Summary"
-description: "modern economic theory by making a case for free market capitalism and minimal government intervention as the best way to increase productivity and create national prosperity..."
+title: "Loonshots: How to Nurture the Crazy Ideas That Win Wars, Cure Diseases, and Transform Industries"
+description: "organizations should nurture seemingly crazy ideas, as these high-risk, high-reward projects often lead to breakthroughs that win wars, cure diseases, and transform industries...."
 pubDate: "Jun 01 2024"
 heroImage: "/post_img.webp"
 ---
