@@ -1,7 +1,7 @@
 ---
 title: "\"The Road to Serfdom\" by Friedrich Hayek"
-description: " an overview of Friedrich Hayek\'s influential book \"The Road to Serfdom,\" highlighting its key arguments against centralized economic planning and its enduring relevance in contemporary political and economic debates..."
-pubDate: "Jul 11 2023"
+description: " an overview of Friedrich Hayek's influential book \"The Road to Serfdom,\" highlighting its key arguments against centralized economic planning and its enduring relevance in contemporary political and economic debates..."
+pubDate: "Aug 03 2024"
 heroImage: "/post_img.webp"
 ---
 Friedrich Hayek's seminal work, "The Road to Serfdom," published in 1944, remains a powerful and influential critique of centralized economic planning and a staunch defense of individual liberty. As we navigate the complex political and economic landscape of the 21st century, Hayek's insights continue to resonate and provide valuable lessons.
