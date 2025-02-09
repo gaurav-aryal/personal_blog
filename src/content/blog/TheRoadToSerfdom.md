@@ -11,7 +11,7 @@ Key ideas in the book include:
 
 **1. The danger of centralized planning**: Hayek contends that attempts to centrally plan an economy will lead to an erosion of personal freedoms and eventually to totalitarianism.  
 **2. The importance of the price system**: He emphasizes the crucial role of free market prices in communicating information and coordinating economic activities efficiently.  
-**31. The knowledge problem**: Hayek argues that central planners can never possess enough knowledge to make effective economic decisions for an entire society.  
+**3. The knowledge problem**: Hayek argues that central planners can never possess enough knowledge to make effective economic decisions for an entire society.  
 **4. The connection between economic and political freedom**: The book illustrates how economic control can quickly lead to political control and the suppression of individual rights.  
 **5. The slippery slope of government intervention**: Hayek warns that even well-intentioned government interventions can set a society on a path towards more control and less freedom.
 
