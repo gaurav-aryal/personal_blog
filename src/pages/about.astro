@@ -1,0 +1,43 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<html lang="en" class="bg-[#0B1120]">
+	<head>
+		<BaseHead title={`About | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+
+	<body class="text-gray-100 bg-gradient-to-br from-[#0B1120] via-[#132347] to-[#0B1120] min-h-screen">
+		<Header />
+		<main class="container mx-auto px-4 pt-28 pb-8 max-w-3xl">
+			<section class="prose prose-invert max-w-none">
+				<h1 class="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+					About Me
+				</h1>
+				<div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 border border-blue-900/20 shadow-xl">
+					<p class="text-gray-300 mb-6 text-lg">
+						Hi, I'm Gaurav Aryal. I'm passionate about building innovative solutions using cutting-edge technologies.
+					</p>
+					<p class="text-gray-300 mb-6 text-lg">
+						With expertise in machine learning, web development, and cloud technologies, I help businesses leverage technology to solve complex problems.
+					</p>
+					<h2 class="text-2xl font-bold mt-8 mb-4 text-blue-400">Experience</h2>
+					<ul class="list-disc pl-6 text-gray-300 space-y-3">
+						<li>Machine Learning Engineer with focus on NLP and Computer Vision</li>
+						<li>Full-stack Developer specializing in modern web technologies</li>
+						<li>Cloud Architecture and DevOps practices</li>
+					</ul>
+					<h2 class="text-2xl font-bold mt-8 mb-4 text-blue-400">Education</h2>
+					<ul class="list-disc pl-6 text-gray-300 space-y-3">
+						<li>Master's in Computer Science</li>
+						<li>Bachelor's in Software Engineering</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html> 

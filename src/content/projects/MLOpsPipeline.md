@@ -3,6 +3,7 @@ title: "Enterprise MLOps Pipeline"
 description: "Production-grade MLOps system implementing continuous training, model deployment, monitoring, and automated model lifecycle management"
 pubDate: "Feb 10 2025"
 heroImage: "/post_img.webp"
+slug: "mlops-pipeline"
 ---
 
 ## System Architecture

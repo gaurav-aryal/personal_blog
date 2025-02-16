@@ -1,24 +1,20 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
-import { BlogSchema } from '../../content/config';
-import ProjectsLayout from '../../layouts/ProjectsLayout.astro';
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
 export async function getStaticPaths() {
-    const projectsEntries = await getCollection('projects');
-    return projectsEntries.map(entry => ( { 
-        params: { slug: entry.slug }, props: { entry },
-    } ));
+    const projects = await Astro.glob('../../content/projects/*.md');
+    
+    return projects.map(project => ({
+        params: { 
+            slug: project.file.split('/').pop().split('.')[0]
+        },
+        props: { project },
+    }));
 }
 
-interface Props {
-    entry: CollectionEntry<"projects">;
-}
-
-const { entry } = Astro.props;
-const projects : BlogSchema = entry.data;
-const { Content } = await entry.render();
+const { project } = Astro.props;
 ---
 
-<ProjectsLayout title={projects.title} description={projects.description} pubDate={projects.pubDate} heroImage={projects.heroImage} updatedDate={projects.updatedDate}>
-    <Content/>
-</ProjectsLayout>
+<ProjectLayout frontmatter={project.frontmatter}>
+    <project.Content />
+</ProjectLayout>

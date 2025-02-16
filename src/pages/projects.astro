@@ -1,0 +1,39 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const projects = await Astro.glob('../content/projects/*.md');
+---
+
+<html lang="en" class="bg-[#0B1120]">
+	<head>
+		<BaseHead title={`Projects | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+
+	<body class="text-gray-100 bg-gradient-to-br from-[#0B1120] via-[#132347] to-[#0B1120] min-h-screen">
+		<Header />
+		<main class="container mx-auto px-4 pt-28 pb-8 max-w-7xl">
+			<h1 class="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+				Projects
+			</h1>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				{projects.map((project) => {
+					const slug = project.file.split('/').pop().split('.')[0];
+					return (
+						<ProjectCard
+							title={project.frontmatter.title}
+							description={project.frontmatter.description}
+							image={project.frontmatter.heroImage}
+							url={slug}
+							large={true}
+						/>
+					);
+				})}
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html> 

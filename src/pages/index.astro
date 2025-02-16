@@ -1,144 +1,230 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getProjects, getBlogPosts } from '../lib/projects';
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-const last_posts = posts.slice(0,7);
-
-const projects = (await getCollection('projects')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-const last_projects = projects;
-
-const neuralNexusDevelopments = (await getCollection('neuralnexus')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-const last_neuralNexusProjects = neuralNexusDevelopments;
-
-const financePosts = (await getCollection('finance')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-const financialPosts = financePosts.slice(0,3);
+// You can fetch these from your content collections
+const projects = await getProjects();
+const blogPosts = await getBlogPosts();
 ---
 
-<BaseLayout>
+<html lang="en" class="bg-[#0B1120]">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
 
-    <div class="pb-12 mt-5">
-      <div class="text-xl py-1">Hey there 👋</div>
-      <div class="text-5xl font-bold">I'm Gaurav Aryal</div>
-      <div class="text-3xl py-3 font-bold"></div>
-      <div class="py-2">
-        <text class="text-lg">
-          Collection of interesting ideas and projects. Still in progress!
-          </text
-        >
-      </div>
-      <div class="mt-8">
-        <a class="btn" href="https://twitter.com/aryalgaurav135" target="_blank"> Let's connect!</a>
-        <!-- <a href="https://github.com/gaurav-aryal/personal_blog" target="_blank" class="btn btn-outline ml-5"> Get This template</a> -->
-      </div>
-    </div>
+	<body class="text-gray-100 bg-gradient-to-br from-[#0B1120] via-[#132347] to-[#0B1120]">
+		<Header />
+		<main class="container mx-auto px-4 pt-28 pb-8 max-w-7xl">
+			<!-- Hero Section -->
+			<section class="hero-section mb-16">
+				<div class="flex items-center gap-8">
+					<div class="profile-image">
+						<img 
+							src="/profile.jpg" 
+							alt="Gaurav Aryal"
+							class="rounded-full w-32 h-32 object-cover border-4 border-blue-500 shadow-lg shadow-blue-500/50"
+						/>
+					</div>
+					<div class="intro-text">
+						<h1 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+							Hey there <span class="wave">👋</span> <br/>I'm Gaurav Aryal
+						</h1>
+						<p class="text-xl text-gray-400 mb-6">
+							Collection of interesting ideas and projects. Still in progress!
+						</p>
+						<a 
+							href="https://twitter.com/aryalgaurav135" 
+							target="_blank" 
+							rel="noopener noreferrer" 
+							class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300 hover:shadow-lg hover:shadow-blue-500/50"
+						>
+							LET'S CONNECT!
+						</a>
+					</div>
+				</div>
+			</section>
 
-    <div>
-      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from AI</div>
-    </div>
-  
-    {
-      last_neuralNexusProjects.map((neuralNexus) => (
-        <HorizontalCard
-          title={neuralNexus.data.title}
-          img={neuralNexus.data.heroImage}
-          desc={neuralNexus.data.description}
-          url={"/neuralnexus/" + neuralNexus.slug}
-          target="_self"
-        />
-        <div class="divider my-0"></div>
-      ))
-    }  
+			<!-- Featured AI Projects -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Latest from AI</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{projects.slice(0, 3).map((project) => (
+						<ProjectCard
+							title={project.title}
+							description={project.description}
+							image={project.hero_image}
+							url={`/projects/${project.slug}`}
+						/>
+					))}
+				</div>
+			</section>
 
-    <div>
-      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from projects</div>
-    </div>
-  
-    {
-      last_projects.map((projects) => (
-        <HorizontalCard
-          title={projects.data.title}
-          img={projects.data.heroImage}
-          desc={projects.data.description}
-          url={"/projects/" + projects.slug}
-          target="_self"
-        />
-        <div class="divider my-0"></div>
-      ))
-    }  
+			<!-- Latest Projects -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-8">Latest from Projects</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					{projects.slice(0, 4).map((project) => (
+						<ProjectCard
+							title={project.title}
+							description={project.description}
+							image={project.hero_image}
+							url={project.github_url || project.live_url}
+							large={true}
+						/>
+					))}
+				</div>
+			</section>
 
-    <div>
-      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-    </div>
+			<!-- Skills & Technologies -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Skills & Technologies</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="skill-card p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition duration-300">
+						<h3 class="font-bold mb-4 text-blue-400 text-xl">Machine Learning & AI</h3>
+						<ul class="space-y-2 text-gray-300">
+							<li>• Deep Learning: PyTorch, TensorFlow</li>
+							<li>• NLP: Transformers, BERT, GPT</li>
+							<li>• Computer Vision: CNN, Object Detection</li>
+							<li>• MLOps: MLflow, Kubeflow, DVC</li>
+						</ul>
+					</div>
+					<div class="skill-card p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition duration-300">
+						<h3 class="font-bold mb-4 text-blue-400 text-xl">Cloud & Infrastructure</h3>
+						<ul class="space-y-2 text-gray-300">
+							<li>• AWS: EC2, S3, SageMaker, Lambda</li>
+							<li>• DevOps: Docker, Kubernetes, CI/CD</li>
+							<li>• Monitoring: Prometheus, Grafana</li>
+							<li>• Databases: PostgreSQL, MongoDB</li>
+						</ul>
+					</div>
+					<div class="skill-card p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition duration-300">
+						<h3 class="font-bold mb-4 text-blue-400 text-xl">Software Engineering</h3>
+						<ul class="space-y-2 text-gray-300">
+							<li>• Languages: Python, JavaScript, Go</li>
+							<li>• Backend: FastAPI, Node.js, gRPC</li>
+							<li>• Frontend: React, TypeScript</li>
+							<li>• Testing: pytest, Jest, Cypress</li>
+						</ul>
+					</div>
+					<div class="skill-card p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition duration-300">
+						<h3 class="font-bold mb-4 text-blue-400 text-xl">Data Engineering</h3>
+						<ul class="space-y-2 text-gray-300">
+							<li>• Big Data: Spark, Hadoop</li>
+							<li>• Streaming: Kafka, Kinesis</li>
+							<li>• ETL: Airflow, dbt</li>
+							<li>• Analytics: Pandas, NumPy</li>
+						</ul>
+					</div>
+				</div>
+			</section>
 
-    {
-      last_posts.map((post) => (
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + post.slug}
-          target="_self"
-        />
-        <div class="divider my-0"></div>
-      ))
-    }
+			<!-- Professional Experience -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Professional Experience</h2>
+				<div class="space-y-6">
+					<div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+						<div class="flex justify-between items-start mb-4">
+							<h3 class="font-bold text-xl text-blue-400">Machine Learning Engineer</h3>
+							<span class="text-gray-400">2022 - Present</span>
+						</div>
+						<ul class="list-disc list-inside text-gray-300 space-y-2">
+							<li>Developed and deployed production ML models for real-time inference</li>
+							<li>Implemented MLOps practices reducing model deployment time by 60%</li>
+							<li>Built scalable data pipelines processing 1TB+ daily data</li>
+						</ul>
+					</div>
+					<!-- Add more experience items as needed -->
+				</div>
+			</section>
 
-<div>
-  <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from Finance</div>
-</div>
+			<!-- Latest Blog Posts -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Latest Blog Posts</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{blogPosts.slice(0, 3).map((post) => (
+						<article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition duration-300">
+							<img 
+								src={post.hero_image} 
+								alt={post.title}
+								class="w-full h-48 object-cover"
+							/>
+							<div class="p-6">
+								<h3 class="font-bold text-xl mb-2 text-blue-400">{post.title}</h3>
+								<p class="text-gray-400 mb-4">{post.description}</p>
+								<a href={`/posts/${post.slug}`} class="text-blue-400 hover:text-blue-300">Read more →</a>
+							</div>
+						</article>
+					))}
+				</div>
+			</section>
 
-{
-  financialPosts.map((finance) => (
-    <HorizontalCard
-      title={finance.data.title}
-      img={finance.data.heroImage}
-      desc={finance.data.description}
-      url={"/finance/" + finance.slug}
-      target="_self"
-    />
-    <div class="divider my-0"></div>
-  ))
-}
+			<!-- Connect Section -->
+			<section id="connect" class="text-center mb-16">
+				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Let's Connect!</h2>
+				<div class="flex justify-center gap-6">
+					<a href="https://github.com/yourusername" class="social-link bg-gray-800 p-4 rounded-full hover:bg-gray-700 transition duration-300">
+						<img src="/github.svg" alt="GitHub" class="w-6 h-6 filter invert"/>
+					</a>
+					<a href="https://linkedin.com/in/yourusername" class="social-link bg-gray-800 p-4 rounded-full hover:bg-gray-700 transition duration-300">
+						<img src="/linkedin.svg" alt="LinkedIn" class="w-6 h-6 filter invert"/>
+					</a>
+					<a href="https://twitter.com/yourusername" class="social-link bg-gray-800 p-4 rounded-full hover:bg-gray-700 transition duration-300">
+						<img src="/twitter.svg" alt="Twitter" class="w-6 h-6 filter invert"/>
+					</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
 
-  <!-- <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
+<style>
+	.hero-section {
+		background: linear-gradient(to right, rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.9));
+		border-radius: 1rem;
+		padding: 2rem;
+		border: 1px solid rgba(59, 130, 246, 0.15);
+		backdrop-filter: blur(8px);
+	}
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-  title="Demo Project 2"
-  img="/post_img.webp"
-  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-  title="Demo Project 3"
-  img="/post_img.webp"
-  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  url="#"
-  badge="FOSS"
-  /> -->
+	.wave {
+		display: inline-block;
+		animation: wave 2.5s infinite;
+		transform-origin: 70% 70%;
+	}
 
-</BaseLayout>
+	@keyframes wave {
+		0% { transform: rotate(0deg); }
+		10% { transform: rotate(14deg); }
+		20% { transform: rotate(-8deg); }
+		30% { transform: rotate(14deg); }
+		40% { transform: rotate(-4deg); }
+		50% { transform: rotate(10deg); }
+		60% { transform: rotate(0deg); }
+		100% { transform: rotate(0deg); }
+	}
+
+	.skill-card {
+		backdrop-filter: blur(12px);
+		transition: all 0.3s ease;
+		background: linear-gradient(145deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.7));
+	}
+
+	.skill-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+	}
+
+	.social-link {
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+
+	.social-link:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+	}
+</style>

@@ -2,16 +2,15 @@
 const today = new Date();
 ---
 
-<footer class="footer footer-center block mb-5 pt-10">
-  <div class="pb-2">
-    &copy; {today.getFullYear()} Gaurav Aryal
-  </div>
-  <div class="inline opacity-75">
-    <!-- Thanks for using this template. Please keep this line to support my work :) -->
-    <a href="https://gauravaryal.com/" target="_blank" class="font-bold">Website</a> developed by
-    <a href="https://gauravaryal.com" target="_blank" class="font-bold">Gaurav Aryal ⚡️</a>
-  </div>
+<footer class="py-8 px-8 bg-gray-800 border-t border-gray-700">
+    <div class="max-w-6xl mx-auto text-center text-gray-400">
+        <div class="mb-4 flex justify-center space-x-6">
+            <a href="/blog" class="hover:text-blue-400 transition duration-300">Blog</a>
+            <a href="/projects" class="hover:text-blue-400 transition duration-300">Projects</a>
+            <a href="/about" class="hover:text-blue-400 transition duration-300">About</a>
+        </div>
+        <div class="text-sm">
+            &copy; {today.getFullYear()} Gaurav Aryal. All rights reserved.
+        </div>
+    </div>
 </footer>
-<style>
-
-</style>
