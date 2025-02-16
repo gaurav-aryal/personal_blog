@@ -7,4 +7,15 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://gauravaryal.com',
   integrations: [mdx(), sitemap(), tailwind()],
+  markdown: {
+    shikiConfig: {
+      theme: 'one-dark-pro',
+      wrap: true
+    },
+    remarkPlugins: [],
+    rehypePlugins: []
+  },
+  experimental: {
+    contentCollections: true
+  }
 });

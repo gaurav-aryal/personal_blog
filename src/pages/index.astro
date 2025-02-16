@@ -4,177 +4,94 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { getProjects, getBlogPosts } from '../lib/projects';
+import { getCollection } from 'astro:content';
 
-// You can fetch these from your content collections
-const projects = await getProjects();
-const blogPosts = await getBlogPosts();
+// Get projects and blog posts using content collections
+const projects = await getCollection('projects');
+const blogPosts = await getCollection('blog');
 ---
 
-<html lang="en" class="bg-[#0B1120]">
+<html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 
-	<body class="text-gray-100 bg-gradient-to-br from-[#0B1120] via-[#132347] to-[#0B1120]">
+	<body class="bg-[#0B1120] text-gray-100">
 		<Header />
-		<main class="container mx-auto px-4 pt-28 pb-8 max-w-7xl">
+		<main class="container mx-auto px-4 pt-16 pb-8">
 			<!-- Hero Section -->
-			<section class="hero-section mb-16">
-				<div class="flex items-center gap-8">
-					<div class="profile-image">
-						<img 
-							src="/profile.jpg" 
-							alt="Gaurav Aryal"
-							class="rounded-full w-32 h-32 object-cover border-4 border-blue-500 shadow-lg shadow-blue-500/50"
-						/>
-					</div>
+			<div class="hero-section">
+				<div class="profile-container">
+					<img 
+						src="/profile.jpg" 
+						alt="Gaurav Aryal" 
+						class="profile-image"
+					/>
 					<div class="intro-text">
-						<h1 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-							Hey there <span class="wave">👋</span> <br/>I'm Gaurav Aryal
+						<h1>
+							<span class="greeting">Hey there <span class="wave">👋</span></span>
+							<span class="name">I'm Gaurav Aryal</span>
 						</h1>
-						<p class="text-xl text-gray-400 mb-6">
-							Collection of interesting ideas and projects. Still in progress!
-						</p>
-						<a 
-							href="https://twitter.com/aryalgaurav135" 
-							target="_blank" 
-							rel="noopener noreferrer" 
-							class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300 hover:shadow-lg hover:shadow-blue-500/50"
-						>
-							LET'S CONNECT!
-						</a>
+						<p class="tagline">Exploring technology, sharing insights, and building for the future</p>
+						<a href="#connect" class="cta-button">LET'S CONNECT!</a>
 					</div>
+				</div>
+			</div>
+
+			<!-- Blog Posts (now first) -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+					Latest Blog Posts
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					{blogPosts
+						.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+						.slice(0, 6)
+						.map((post) => (
+							<a href={`/blog/${post.slug}`} 
+								class="block p-6 bg-gray-800/50 rounded-xl hover:bg-gray-700/50 transition duration-300 border border-blue-900/20 backdrop-blur-sm">
+								<h3 class="text-xl font-bold mb-2 text-blue-400">{post.data.title}</h3>
+								<p class="text-gray-400 mb-4">{post.data.description}</p>
+								<div class="flex gap-2">
+									{post.data.tags?.map((tag) => (
+										<span class="text-xs bg-blue-900/30 text-blue-300 px-2 py-1 rounded">
+											{tag}
+										</span>
+									))}
+								</div>
+								<time class="text-sm text-gray-500 mt-4 block" datetime={post.data.pubDate}>
+									{new Date(post.data.pubDate).toLocaleDateString('en-US', {
+										year: 'numeric',
+										month: 'long',
+										day: 'numeric'
+									})}
+								</time>
+							</a>
+						))}
+				</div>
+				<div class="text-center mt-8">
+					<a href="/blog" 
+						class="inline-block px-6 py-3 bg-blue-600/20 text-blue-400 rounded-lg hover:bg-blue-600/30 transition duration-300 border border-blue-900/20">
+						View All Posts
+					</a>
 				</div>
 			</section>
 
-			<!-- Featured AI Projects -->
+			<!-- Projects Section (now second) -->
 			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Latest from AI</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					{projects.slice(0, 3).map((project) => (
+				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+					Projects
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					{projects.map((project) => (
 						<ProjectCard
-							title={project.title}
-							description={project.description}
-							image={project.hero_image}
+							title={project.data.title}
+							description={project.data.description}
+							image={project.data.heroImage}
 							url={`/projects/${project.slug}`}
+							large={false}
 						/>
 					))}
-				</div>
-			</section>
-
-			<!-- Latest Projects -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8">Latest from Projects</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-					{projects.slice(0, 4).map((project) => (
-						<ProjectCard
-							title={project.title}
-							description={project.description}
-							image={project.hero_image}
-							url={project.github_url || project.live_url}
-							large={true}
-						/>
-					))}
-				</div>
-			</section>
-
-			<!-- Skills & Technologies -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Skills & Technologies</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-					<div class="skill-card p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition duration-300">
-						<h3 class="font-bold mb-4 text-blue-400 text-xl">Machine Learning & AI</h3>
-						<ul class="space-y-2 text-gray-300">
-							<li>• Deep Learning: PyTorch, TensorFlow</li>
-							<li>• NLP: Transformers, BERT, GPT</li>
-							<li>• Computer Vision: CNN, Object Detection</li>
-							<li>• MLOps: MLflow, Kubeflow, DVC</li>
-						</ul>
-					</div>
-					<div class="skill-card p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition duration-300">
-						<h3 class="font-bold mb-4 text-blue-400 text-xl">Cloud & Infrastructure</h3>
-						<ul class="space-y-2 text-gray-300">
-							<li>• AWS: EC2, S3, SageMaker, Lambda</li>
-							<li>• DevOps: Docker, Kubernetes, CI/CD</li>
-							<li>• Monitoring: Prometheus, Grafana</li>
-							<li>• Databases: PostgreSQL, MongoDB</li>
-						</ul>
-					</div>
-					<div class="skill-card p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition duration-300">
-						<h3 class="font-bold mb-4 text-blue-400 text-xl">Software Engineering</h3>
-						<ul class="space-y-2 text-gray-300">
-							<li>• Languages: Python, JavaScript, Go</li>
-							<li>• Backend: FastAPI, Node.js, gRPC</li>
-							<li>• Frontend: React, TypeScript</li>
-							<li>• Testing: pytest, Jest, Cypress</li>
-						</ul>
-					</div>
-					<div class="skill-card p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition duration-300">
-						<h3 class="font-bold mb-4 text-blue-400 text-xl">Data Engineering</h3>
-						<ul class="space-y-2 text-gray-300">
-							<li>• Big Data: Spark, Hadoop</li>
-							<li>• Streaming: Kafka, Kinesis</li>
-							<li>• ETL: Airflow, dbt</li>
-							<li>• Analytics: Pandas, NumPy</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-
-			<!-- Professional Experience -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Professional Experience</h2>
-				<div class="space-y-6">
-					<div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
-						<div class="flex justify-between items-start mb-4">
-							<h3 class="font-bold text-xl text-blue-400">Machine Learning Engineer</h3>
-							<span class="text-gray-400">2022 - Present</span>
-						</div>
-						<ul class="list-disc list-inside text-gray-300 space-y-2">
-							<li>Developed and deployed production ML models for real-time inference</li>
-							<li>Implemented MLOps practices reducing model deployment time by 60%</li>
-							<li>Built scalable data pipelines processing 1TB+ daily data</li>
-						</ul>
-					</div>
-					<!-- Add more experience items as needed -->
-				</div>
-			</section>
-
-			<!-- Latest Blog Posts -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Latest Blog Posts</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					{blogPosts.slice(0, 3).map((post) => (
-						<article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition duration-300">
-							<img 
-								src={post.hero_image} 
-								alt={post.title}
-								class="w-full h-48 object-cover"
-							/>
-							<div class="p-6">
-								<h3 class="font-bold text-xl mb-2 text-blue-400">{post.title}</h3>
-								<p class="text-gray-400 mb-4">{post.description}</p>
-								<a href={`/posts/${post.slug}`} class="text-blue-400 hover:text-blue-300">Read more →</a>
-							</div>
-						</article>
-					))}
-				</div>
-			</section>
-
-			<!-- Connect Section -->
-			<section id="connect" class="text-center mb-16">
-				<h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Let's Connect!</h2>
-				<div class="flex justify-center gap-6">
-					<a href="https://github.com/yourusername" class="social-link bg-gray-800 p-4 rounded-full hover:bg-gray-700 transition duration-300">
-						<img src="/github.svg" alt="GitHub" class="w-6 h-6 filter invert"/>
-					</a>
-					<a href="https://linkedin.com/in/yourusername" class="social-link bg-gray-800 p-4 rounded-full hover:bg-gray-700 transition duration-300">
-						<img src="/linkedin.svg" alt="LinkedIn" class="w-6 h-6 filter invert"/>
-					</a>
-					<a href="https://twitter.com/yourusername" class="social-link bg-gray-800 p-4 rounded-full hover:bg-gray-700 transition duration-300">
-						<img src="/twitter.svg" alt="Twitter" class="w-6 h-6 filter invert"/>
-					</a>
 				</div>
 			</section>
 		</main>
@@ -184,17 +101,81 @@ const blogPosts = await getBlogPosts();
 
 <style>
 	.hero-section {
-		background: linear-gradient(to right, rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.9));
+		padding: 4rem 2rem;
+		background: var(--background-gradient, linear-gradient(to bottom, #1a1f2e, #141925));
 		border-radius: 1rem;
-		padding: 2rem;
-		border: 1px solid rgba(59, 130, 246, 0.15);
-		backdrop-filter: blur(8px);
+		margin: 2rem 0;
+	}
+
+	.profile-container {
+		display: flex;
+		align-items: center;
+		gap: 2.5rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.profile-image {
+		width: 180px;
+		height: 180px;
+		border-radius: 50%;
+		border: 4px solid #3b82f6;
+		box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+	}
+
+	.intro-text {
+		flex: 1;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		line-height: 1.2;
+		margin: 0;
+		color: #fff;
+	}
+
+	.greeting {
+		display: block;
+		font-size: 2rem;
+		color: #3b82f6;
+		margin-bottom: 0.5rem;
 	}
 
 	.wave {
 		display: inline-block;
 		animation: wave 2.5s infinite;
 		transform-origin: 70% 70%;
+	}
+
+	.name {
+		display: block;
+		font-weight: 700;
+		background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.tagline {
+		font-size: 1.25rem;
+		color: #94a3b8;
+		margin: 1rem 0 2rem;
+	}
+
+	.cta-button {
+		display: inline-block;
+		background: #3b82f6;
+		color: white;
+		padding: 0.75rem 2rem;
+		border-radius: 0.5rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.cta-button:hover {
+		background: #2563eb;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 	}
 
 	@keyframes wave {
@@ -208,23 +189,28 @@ const blogPosts = await getBlogPosts();
 		100% { transform: rotate(0deg); }
 	}
 
-	.skill-card {
-		backdrop-filter: blur(12px);
-		transition: all 0.3s ease;
-		background: linear-gradient(145deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.7));
-	}
+	@media (max-width: 768px) {
+		.profile-container {
+			flex-direction: column;
+			text-align: center;
+			gap: 1.5rem;
+		}
 
-	.skill-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
-	}
+		.profile-image {
+			width: 150px;
+			height: 150px;
+		}
 
-	.social-link {
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-	}
+		h1 {
+			font-size: 2rem;
+		}
 
-	.social-link:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+		.greeting {
+			font-size: 1.75rem;
+		}
+
+		.tagline {
+			font-size: 1.1rem;
+		}
 	}
 </style>

@@ -5,33 +5,55 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<html lang="en" class="bg-gray-900">
+<html lang="en" class="bg-[#0B1120]">
 	<head>
 		<BaseHead title={`Services | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
 	</head>
 
 	<body class="text-gray-100">
 		<Header />
-		<main class="container mx-auto px-4 py-8">
-			<section class="max-w-3xl mx-auto">
-				<h1 class="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-					Services
-				</h1>
-				<div class="grid gap-8">
-					<div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
-						<h2 class="text-2xl font-bold mb-4 text-blue-400">Machine Learning Solutions</h2>
-						<p class="text-gray-300">Custom ML models and AI integration for your business needs.</p>
-					</div>
-					<div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
-						<h2 class="text-2xl font-bold mb-4 text-blue-400">Web Development</h2>
-						<p class="text-gray-300">Modern web applications built with cutting-edge technologies.</p>
-					</div>
-					<div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
-						<h2 class="text-2xl font-bold mb-4 text-blue-400">Cloud Architecture</h2>
-						<p class="text-gray-300">Scalable and secure cloud infrastructure design and implementation.</p>
-					</div>
+		<main class="container mx-auto px-4 pt-28 pb-8">
+			<h1 class="text-4xl font-bold mb-12 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center">
+				Services
+			</h1>
+
+			<div class="grid gap-8 max-w-4xl mx-auto">
+				<!-- Machine Learning Solutions -->
+				<div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm border border-blue-900/20 hover:border-blue-500 transition duration-300">
+					<h2 class="text-2xl font-bold mb-4 text-blue-400">Machine Learning Solutions</h2>
+					<p class="text-gray-400 mb-4">Custom ML models and AI integration for your business needs.</p>
+					<ul class="list-disc list-inside text-gray-400 space-y-2">
+						<li>Custom model development</li>
+						<li>Model deployment and scaling</li>
+						<li>AI integration with existing systems</li>
+						<li>Performance optimization</li>
+					</ul>
 				</div>
-			</section>
+
+				<!-- Web Development -->
+				<div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm border border-blue-900/20 hover:border-blue-500 transition duration-300">
+					<h2 class="text-2xl font-bold mb-4 text-blue-400">Web Development</h2>
+					<p class="text-gray-400 mb-4">Modern web applications built with cutting-edge technologies.</p>
+					<ul class="list-disc list-inside text-gray-400 space-y-2">
+						<li>Full-stack web development</li>
+						<li>Progressive Web Apps (PWA)</li>
+						<li>Responsive design</li>
+						<li>Performance optimization</li>
+					</ul>
+				</div>
+
+				<!-- Cloud Architecture -->
+				<div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm border border-blue-900/20 hover:border-blue-500 transition duration-300">
+					<h2 class="text-2xl font-bold mb-4 text-blue-400">Cloud Architecture</h2>
+					<p class="text-gray-400 mb-4">Scalable and secure cloud infrastructure design and implementation.</p>
+					<ul class="list-disc list-inside text-gray-400 space-y-2">
+						<li>Cloud infrastructure design</li>
+						<li>Serverless architecture</li>
+						<li>Microservices implementation</li>
+						<li>DevOps automation</li>
+					</ul>
+				</div>
+			</div>
 		</main>
 		<Footer />
 	</body>

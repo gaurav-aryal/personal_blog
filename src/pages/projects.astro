@@ -1,11 +1,13 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-const projects = await Astro.glob('../content/projects/*.md');
+const projects = await getCollection('projects');
+console.log("Available projects:", projects.map(p => p.slug));
 ---
 
 <html lang="en" class="bg-[#0B1120]">
@@ -20,18 +22,15 @@ const projects = await Astro.glob('../content/projects/*.md');
 				Projects
 			</h1>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				{projects.map((project) => {
-					const slug = project.file.split('/').pop().split('.')[0];
-					return (
-						<ProjectCard
-							title={project.frontmatter.title}
-							description={project.frontmatter.description}
-							image={project.frontmatter.heroImage}
-							url={slug}
-							large={true}
-						/>
-					);
-				})}
+				{projects.map((project) => (
+					<ProjectCard
+						title={project.data.title}
+						description={project.data.description}
+						image={project.data.heroImage}
+						url={`/projects/${project.slug}`}
+						large={true}
+					/>
+				))}
 			</div>
 		</main>
 		<Footer />

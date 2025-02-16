@@ -1,0 +1,21 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Main cube -->
+    <path d="M50 15L85 35V65L50 85L15 65V35L50 15Z" 
+          fill="#1E293B" 
+          stroke="#60A5FA" 
+          stroke-width="2"/>
+    
+    <!-- Inner lines -->
+    <path d="M50 15L50 85M15 35L85 35M15 65L85 65" 
+          stroke="#60A5FA" 
+          stroke-width="1" 
+          stroke-opacity="0.5"/>
+    
+    <!-- Highlight -->
+    <path d="M50 15L85 35L50 55L15 35L50 15Z" 
+          fill="#60A5FA" 
+          fill-opacity="0.1"/>
+    
+    <!-- Center dot -->
+    <circle cx="50" cy="50" r="4" fill="#60A5FA"/>
+</svg> 

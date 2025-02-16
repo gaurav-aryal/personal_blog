@@ -1,20 +1,21 @@
 ---
+import { getCollection } from 'astro:content';
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
 export async function getStaticPaths() {
-    const projects = await Astro.glob('../../content/projects/*.md');
+    const projects = await getCollection('projects');
+    console.log("Building routes for projects:", projects.map(p => p.slug));
     
-    return projects.map(project => ({
-        params: { 
-            slug: project.file.split('/').pop().split('.')[0]
-        },
-        props: { project },
+    return projects.map(entry => ({
+        params: { slug: entry.slug },
+        props: { entry },
     }));
 }
 
-const { project } = Astro.props;
+const { entry } = Astro.props;
+const { Content } = await entry.render();
 ---
 
-<ProjectLayout frontmatter={project.frontmatter}>
-    <project.Content />
+<ProjectLayout frontmatter={entry.data}>
+    <Content />
 </ProjectLayout>

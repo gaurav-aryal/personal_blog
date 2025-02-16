@@ -2,15 +2,17 @@
 const today = new Date();
 ---
 
-<footer class="py-8 px-8 bg-gray-800 border-t border-gray-700">
-    <div class="max-w-6xl mx-auto text-center text-gray-400">
-        <div class="mb-4 flex justify-center space-x-6">
-            <a href="/blog" class="hover:text-blue-400 transition duration-300">Blog</a>
-            <a href="/projects" class="hover:text-blue-400 transition duration-300">Projects</a>
-            <a href="/about" class="hover:text-blue-400 transition duration-300">About</a>
-        </div>
-        <div class="text-sm">
-            &copy; {today.getFullYear()} Gaurav Aryal. All rights reserved.
-        </div>
-    </div>
+<footer class="bg-gray-900 border-t border-blue-900/20">
+	<div class="container mx-auto px-4 py-8">
+		<div class="flex flex-col items-center">
+			<div class="mb-4 flex space-x-6">
+				<a href="/blog" class="text-gray-400 hover:text-blue-400 transition duration-300">Blog</a>
+				<a href="/projects" class="text-gray-400 hover:text-blue-400 transition duration-300">Projects</a>
+				<a href="/about" class="text-gray-400 hover:text-blue-400 transition duration-300">About</a>
+			</div>
+			<p class="text-gray-500 text-sm">
+				&copy; {today.getFullYear()} Gaurav Aryal. All rights reserved.
+			</p>
+		</div>
+	</div>
 </footer>

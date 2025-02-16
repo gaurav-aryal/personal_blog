@@ -1,0 +1,78 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en" class="bg-[#0B1120]">
+	<head>
+		<BaseHead title={frontmatter.title} description={frontmatter.description} />
+	</head>
+
+	<body class="text-gray-100">
+		<Header />
+		<main class="container mx-auto px-4 pt-28 pb-8 max-w-4xl">
+			<article class="prose prose-invert max-w-none">
+				<div class="mb-8">
+					<h1 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+						{frontmatter.title}
+					</h1>
+					<div class="flex gap-2 mb-4">
+						{frontmatter.tags?.map((tag: string) => (
+							<span class="text-xs bg-blue-900/30 text-blue-300 px-2 py-1 rounded">
+								{tag}
+							</span>
+						))}
+					</div>
+					<p class="text-gray-400">{frontmatter.description}</p>
+					<time class="text-gray-500 text-sm" datetime={frontmatter.pubDate}>
+						{new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric',
+						})}
+					</time>
+				</div>
+				<div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm border border-blue-900/20">
+					<slot />
+				</div>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	.prose {
+		color: #94a3b8;
+	}
+	.prose h1, .prose h2, .prose h3, .prose h4 {
+		color: #f1f5f9;
+		margin-top: 2em;
+		margin-bottom: 1em;
+	}
+	.prose code {
+		background-color: #1e293b;
+		color: #e2e8f0;
+		padding: 0.2em 0.4em;
+		border-radius: 0.375rem;
+	}
+	.prose pre {
+		background-color: #1e293b;
+		border-radius: 0.5rem;
+		padding: 1em;
+	}
+	.prose a {
+		color: #60a5fa;
+	}
+	.prose ul {
+		list-style-type: disc;
+		padding-left: 1.5em;
+	}
+	.prose pre code {
+		background-color: transparent;
+		padding: 0;
+	}
+</style> 

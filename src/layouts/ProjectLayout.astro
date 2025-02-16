@@ -18,11 +18,11 @@ const { frontmatter } = Astro.props;
 				<h1 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
 					{frontmatter.title}
 				</h1>
-				<div class="mb-8">
+				<div class="mb-8 flex justify-center bg-white/5 p-4 rounded-xl">
 					<img 
 						src={frontmatter.heroImage} 
 						alt={frontmatter.title}
-						class="rounded-xl w-full"
+						class="w-24 h-24"
 					/>
 				</div>
 				<div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm">
@@ -32,4 +32,29 @@ const { frontmatter } = Astro.props;
 		</main>
 		<Footer />
 	</body>
-</html> 
+</html>
+
+<style is:global>
+	.prose {
+		color: #94a3b8;
+	}
+	.prose h1, .prose h2, .prose h3, .prose h4 {
+		color: #f1f5f9;
+	}
+	.prose code {
+		background-color: #1e293b;
+		color: #e2e8f0;
+		padding: 0.2em 0.4em;
+		border-radius: 0.375rem;
+	}
+	.prose pre {
+		background-color: #1e293b;
+		border-radius: 0.5rem;
+	}
+	.prose a {
+		color: #60a5fa;
+	}
+	.prose ul {
+		list-style-type: disc;
+	}
+</style> 

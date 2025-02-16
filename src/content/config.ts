@@ -53,16 +53,36 @@ export type ProjectsSchema = z.infer<typeof projectsSchema>;
 export type NeuralNexusSchema = z.infer<typeof neuralnexusSchema>;
 export type FinanceSchema = z.infer<typeof financeSchema>;
 
-const blogCollection = defineCollection({ schema: blogSchema });
+const blogCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        pubDate: z.string(),
+        heroImage: z.string().optional(),
+        tags: z.array(z.string()).optional()
+    })
+});
+
 const storeCollection = defineCollection({ schema: storeSchema });
 const projectCollection = defineCollection({ schema: projectsSchema });
 const neuralnexusCollection = defineCollection({ schema: neuralnexusSchema });
 const financeCollection = defineCollection({ schema: financeSchema });
 
+const projectsCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        pubDate: z.string(),
+        heroImage: z.string()
+    })
+});
+
 export const collections = {
     'blog': blogCollection,
     'store': storeCollection,
-    'projects': projectCollection,
+    'projects': projectsCollection,
     'neuralnexus': neuralnexusCollection,
     'finance': financeCollection
 }
