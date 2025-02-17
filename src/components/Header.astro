@@ -1,7 +1,7 @@
 import HeaderLink from './HeaderLink.astro';
 
 <div
-  class="sticky lg:hidden top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-sm"
+  class="fixed lg:hidden top-0 z-30 flex h-16 w-full justify-center bg-[#0B1120]/90 backdrop-blur-sm border-b border-blue-900/20"
 >
   <div class="navbar">
     <div class="navbar-start">
@@ -12,7 +12,7 @@ import HeaderLink from './HeaderLink.astro';
       </label>
     </div>
     <div class="navbar-center">
-      <a class="btn btn-ghost normal-case text-xl" href="/">Gaurav Aryal ⚡️</a>
+      <a class="btn btn-ghost normal-case text-xl" href="/">Gaurav Aryal</a>
     </div>
     <div class="navbar-end"></div>
   </div>
@@ -20,16 +20,33 @@ import HeaderLink from './HeaderLink.astro';
 
 <header class="fixed w-full top-0 z-50 bg-[#0B1120]/90 border-b border-blue-900/20 backdrop-blur-sm">
 	<nav class="container mx-auto px-4 py-4">
-		<div class="flex justify-between items-center">
+		<!-- Desktop Navigation -->
+		<div class="hidden md:flex justify-between items-center">
 			<a href="/" class="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
 				Gaurav Aryal
 			</a>
-			<div class="hidden md:flex space-x-6">
+			<div class="flex space-x-6">
 				<a href="/blog" class="text-gray-300 hover:text-blue-400 transition duration-300">Blog</a>
 				<a href="/projects" class="text-gray-300 hover:text-blue-400 transition duration-300">Projects</a>
 				<a href="/services" class="text-gray-300 hover:text-blue-400 transition duration-300">Services</a>
 				<a href="/products" class="text-gray-300 hover:text-blue-400 transition duration-300">Products</a>
 				<a href="/about" class="text-gray-300 hover:text-blue-400 transition duration-300">About</a>
+			</div>
+		</div>
+
+		<!-- Mobile Navigation -->
+		<div class="md:hidden">
+			<div class="flex justify-center mb-4">
+				<a href="/" class="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+					Gaurav Aryal
+				</a>
+			</div>
+			<div class="flex justify-around">
+				<a href="/blog" class="text-gray-300 hover:text-blue-400 transition duration-300 text-sm">Blog</a>
+				<a href="/projects" class="text-gray-300 hover:text-blue-400 transition duration-300 text-sm">Projects</a>
+				<a href="/services" class="text-gray-300 hover:text-blue-400 transition duration-300 text-sm">Services</a>
+				<a href="/products" class="text-gray-300 hover:text-blue-400 transition duration-300 text-sm">Products</a>
+				<a href="/about" class="text-gray-300 hover:text-blue-400 transition duration-300 text-sm">About</a>
 			</div>
 		</div>
 	</nav>
