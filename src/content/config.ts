@@ -3,17 +3,19 @@ import { z, defineCollection } from "astro:content";
 const blogSchema = z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.coerce.date(),
+    pubDate: z.string(),
     updatedDate: z.string().optional(),
     heroImage: z.string().optional(),
+    tags: z.array(z.string()).optional(),
 });
 
 const projectsSchema = z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.coerce.date(),
+    pubDate: z.string(),
     updatedDate: z.string().optional(),
     heroImage: z.string().optional(),
+    tags: z.array(z.string()).optional(),
 });
 
 const neuralnexusSchema = z.object({
@@ -41,9 +43,10 @@ const storeSchema = z.object({
 const financeSchema = z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.coerce.date(),
+    pubDate: z.string(),
     updatedDate: z.string().optional(),
     heroImage: z.string().optional(),
+    tags: z.array(z.string()).optional(),
 });
 
 
@@ -53,17 +56,7 @@ export type ProjectsSchema = z.infer<typeof projectsSchema>;
 export type NeuralNexusSchema = z.infer<typeof neuralnexusSchema>;
 export type FinanceSchema = z.infer<typeof financeSchema>;
 
-const blogCollection = defineCollection({
-    type: 'content',
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        pubDate: z.string(),
-        heroImage: z.string().optional(),
-        tags: z.array(z.string()).optional()
-    })
-});
-
+const blogCollection = defineCollection({ schema: blogSchema });
 const storeCollection = defineCollection({ schema: storeSchema });
 const projectCollection = defineCollection({ schema: projectsSchema });
 const neuralnexusCollection = defineCollection({ schema: neuralnexusSchema });
