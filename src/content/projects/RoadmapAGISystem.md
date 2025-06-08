@@ -1,7 +1,7 @@
 ---
 title: "Advanced Cognitive Architecture Research Initiative"
 description: "A systematic approach to developing scalable cognitive architectures through distributed computing and hierarchical learning systems"
-pubDate: "Mar 26 2023"
+pubDate: "Feb 10 2025"
 heroImage: "/post_img.webp"
 ---
 
