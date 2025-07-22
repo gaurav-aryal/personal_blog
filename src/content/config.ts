@@ -49,18 +49,36 @@ const financeSchema = z.object({
     tags: z.array(z.string()).optional(),
 });
 
+const leetcodeSchema = z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    order: z.number().optional(),
+});
+
+const systemDesignSchema = z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    order: z.number(),
+});
+
 
 export type BlogSchema = z.infer<typeof blogSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
 export type ProjectsSchema = z.infer<typeof projectsSchema>;
 export type NeuralNexusSchema = z.infer<typeof neuralnexusSchema>;
 export type FinanceSchema = z.infer<typeof financeSchema>;
+export type LeetcodeSchema = z.infer<typeof leetcodeSchema>;
+export type SystemDesignSchema = z.infer<typeof systemDesignSchema>;
 
 const blogCollection = defineCollection({ schema: blogSchema });
 const storeCollection = defineCollection({ schema: storeSchema });
 const projectCollection = defineCollection({ schema: projectsSchema });
 const neuralnexusCollection = defineCollection({ schema: neuralnexusSchema });
 const financeCollection = defineCollection({ schema: financeSchema });
+const leetcodeCollection = defineCollection({ schema: leetcodeSchema });
+const systemDesignCollection = defineCollection({ schema: systemDesignSchema });
 
 const projectsCollection = defineCollection({
     type: 'content',
@@ -77,5 +95,7 @@ export const collections = {
     'store': storeCollection,
     'projects': projectsCollection,
     'neuralnexus': neuralnexusCollection,
-    'finance': financeCollection
+    'finance': financeCollection,
+    'leetcode': leetcodeCollection,
+    'system-design': systemDesignCollection,
 }

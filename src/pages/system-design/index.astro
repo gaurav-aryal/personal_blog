@@ -1,0 +1,35 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from "astro:content";
+
+const systemDesignPosts = (await getCollection("system-design")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<html lang="en" class="bg-[#0B1120]">
+  <head>
+    <BaseHead title={`System Design | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="text-gray-100">
+    <Header />
+    <main class="container mx-auto px-4 pt-28 pb-8 max-w-4xl">
+      <h1 class="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+        System Design Topics
+      </h1>
+      <div class="space-y-6">
+        {systemDesignPosts.map((post) => (
+          <a href={`/system-design/${post.slug}/`}
+             class="block p-6 bg-gray-800/50 rounded-xl hover:bg-gray-700/50 transition duration-300 border border-blue-900/20 backdrop-blur-sm">
+            <h2 class="text-2xl font-bold mb-2 text-blue-400">{post.data.title}</h2>
+            <p class="text-gray-400 mb-4">{post.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

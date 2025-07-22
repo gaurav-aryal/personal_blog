@@ -110,5 +110,3 @@ The implications of Deutsch's ideas are vast:
 ---
 
 This book has fundamentally changed how I view progress, problems, and human potential. I'd love to hear your thoughts on these ideas. Have you read The Beginning of Infinity? How has it influenced your thinking about knowledge and progress?
-
-Let's continue this discussion in the comments below. 

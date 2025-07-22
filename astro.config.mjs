@@ -14,8 +14,5 @@ export default defineConfig({
     },
     remarkPlugins: [],
     rehypePlugins: []
-  },
-  experimental: {
-    contentCollections: true
   }
 });

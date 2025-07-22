@@ -27,8 +27,8 @@ const { frontmatter } = Astro.props;
 						))}
 					</div>
 					<p class="text-gray-400">{frontmatter.description}</p>
-					<time class="text-gray-500 text-sm" datetime={frontmatter.pubDate}>
-						{new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
+					<time class="text-gray-500 text-sm" datetime={frontmatter.date}>
+						{new Date(frontmatter.date).toLocaleDateString('en-US', {
 							year: 'numeric',
 							month: 'long',
 							day: 'numeric',
