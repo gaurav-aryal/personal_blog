@@ -1,7 +1,7 @@
 ---
 title: "Designing Resilient and Scalable Microservices for Real-World Enterprise Systems"
 description: "A deep dive into the architecture, patterns, and hands-on strategies for building robust, scalable microservices—connecting real-world experience with system design concepts critical for senior engineering interviews."
-pubDate: "2024-07-19"
+pubDate: "2025-07-26"
 heroImage: "/post_img.webp"
 tags: ["system design", "microservices", "resilience", "scalability", "AWS", "Spring Boot", "DevOps", "observability"]
 ---
