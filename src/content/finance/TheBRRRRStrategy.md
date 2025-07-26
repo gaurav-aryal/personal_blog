@@ -1,5 +1,5 @@
 ---
-title: "The BRRRR Strategy: Building Wealth with Real Estate Investment"
+title: "The BRRRR Strategy"
 description: "explores the powerful BRRRR strategy, detailing how it helps real estate investors to leverage their resources effectively, scale their portfolios, and achieve extraordinary results by creating passive income streams..."
 pubDate: "Jul 18 2023"
 heroImage: "/post_img.webp"

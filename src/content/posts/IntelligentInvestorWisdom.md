@@ -1,5 +1,5 @@
 ---
-title: "The Intelligent Investor: Benjamin Graham's Timeless Principles"
+title: "The Intelligent Investor"
 description: "A deep dive into Benjamin Graham's foundational work on value investing, exploring how his principles shaped Warren Buffett and continue to be relevant in modern markets"
 pubDate: "Feb 10 2025"
 heroImage: "/post_img.webp"

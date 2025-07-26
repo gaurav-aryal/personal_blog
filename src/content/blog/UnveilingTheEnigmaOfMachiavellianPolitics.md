@@ -1,5 +1,5 @@
 ---
-title: "Unveiling the Enigma: Why Politics Attracts Machiavellian Characters"
+title: "Unveiling the Enigma"
 description: "The allure of politics for Machiavellian characters, drawing inspiration from Niccolo Machiavelli's \"The Prince,\" ..."
 pubDate: "Apr 11 2023"
 heroImage: "/post_img.webp"

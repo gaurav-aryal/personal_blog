@@ -1,5 +1,5 @@
 ---
-title: "Zero to One: Notes on Startups, or How to Build the Future"
+title: "Zero to One"
 description: "a guide to aspiring entrepreneurs towards groundbreaking ventures and a brighter future..."
 pubDate: "08/01/2023"
 heroImage: "/post_img.webp"

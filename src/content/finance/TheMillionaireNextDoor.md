@@ -1,5 +1,5 @@
 ---
-title: "The Millionaire Next Door: Unveiling the Surprising Secrets of America's Wealthy"
+title: "The Millionaire Next Door"
 description: "the surprising secrets of America's wealthy as we explore the insights from \"The Millionaire Next Door,\" revealing the habits, mindset, and behaviors that contribute to their financial success..."
 pubDate: "Jun 27 2023"
 heroImage: "/post_img.webp"

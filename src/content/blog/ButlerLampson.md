@@ -1,5 +1,5 @@
 ---
-title: "Butler Lampson: The Pioneer of Modern Computing"
+title: "Butler Lampson"
 description: "The life and contributions of Butler Lampson, a pioneer in computer science and recipient of the Turing Award, and his impact on the development of modern computing technology...."
 pubDate: "May 14 2023"
 heroImage: "/post_img.webp"

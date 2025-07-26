@@ -1,5 +1,5 @@
 ---
-title: "Antifragile: Things That Gain from Disorder"
+title: "Antifragile"
 description: "Nassim Nicholas Taleb's Antifragile teaches us to thrive and grow stronger through chaos and uncertainty, transforming volatility into opportunity..."
 pubDate: "July 13 2024"
 heroImage: "/post_img.webp"

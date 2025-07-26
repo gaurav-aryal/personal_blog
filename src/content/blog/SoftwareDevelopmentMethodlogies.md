@@ -1,5 +1,5 @@
 ---
-title: "Software Development Methodologies: A Comparison of Waterfall, Agile, and Lean Approaches"
+title: "Software Development Methodologies"
 description: "the characteristics, strengths, and considerations of three popular software development methodologies—Waterfall, Agile, and Lean—to help software teams make informed decisions and effectively manage their projects..."
 pubDate: "Jun 26 2023"
 heroImage: "/post_img.webp"

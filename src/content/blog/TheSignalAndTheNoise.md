@@ -1,5 +1,5 @@
 ---
-title: "The Signal and the Noise: Why So Many Predictions Fail - but Some Don't"
+title: "The Signal and the Noise"
 description: "the reasons behind the frequent failures of predictions, while also illuminating the factors that contribute to successful forecasting, highlighting the importance of leveraging data, statistical modeling, and a mindset of intellectual humility..."
 pubDate: "Mar 16 2024"
 heroImage: "/post_img.webp"

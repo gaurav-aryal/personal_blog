@@ -1,5 +1,5 @@
 ---
-title: "IPV8: Decentralized Communication"
+title: "IPV8"
 description: " IPV8: an overview of its functionality and how it enables decentralized communication..."
 pubDate: "Jun 13 2023"
 heroImage: "/post_img.webp"

@@ -1,5 +1,5 @@
 ---
-title: "Luna: A Short Story"
+title: "Luna"
 description: "The story of Luna, a curious girl..."
 pubDate: "Apr 28 2023"
 heroImage: "/post_img.webp"

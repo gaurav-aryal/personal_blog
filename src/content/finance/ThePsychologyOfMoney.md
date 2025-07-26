@@ -1,5 +1,5 @@
 ---
-title: "The Psychology of Money: Understanding Behavioral Finance for Better Decision Making"
+title: "The Psychology of Money"
 description: "behavioral finance and its impact on financial decision-making in our blog post, where we explore the psychology of money and provide insights for making better financial choices..."
 pubDate: "Jun 23 2023"
 heroImage: "/post_img.webp"

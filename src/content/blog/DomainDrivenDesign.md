@@ -1,5 +1,5 @@
 ---
-title: "Domain-Driven Design: Designing Software around Business Domains"
+title: "Domain-Driven Design"
 description: "significance in designing software around business domains and its potential to create more effective and flexible software solutions..."
 pubDate: "Jun 16 2023"
 heroImage: "/post_img.webp"

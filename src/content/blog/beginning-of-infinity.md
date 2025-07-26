@@ -1,5 +1,5 @@
 ---
-title: "The Beginning of Infinity: Unraveling David Deutsch's Masterpiece"
+title: "The Beginning of Infinity"
 description: "A deep dive into the ideas about knowledge, progress, and reality presented in The Beginning of Infinity"
 pubDate: "2025-02-16"
 heroImage: "/blog/beginning-of-infinity.jpg"

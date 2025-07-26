@@ -1,5 +1,5 @@
 ---
-title: "Mastering The Market Cycle: Getting the Odds on Your Side"
+title: "Mastering The Market Cycle"
 description: "illuminating insights in 'Mastering The Market Cycle: Getting the Odds on Your Side,' as this blog post explores the strategic wisdom, offering investors a roadmap to navigate the intricacies of market cycles and seize opportunities amidst the ever-evolving landscape of financial markets..."
 pubDate: "Jan 6 2024"
 heroImage: "/post_img.webp"

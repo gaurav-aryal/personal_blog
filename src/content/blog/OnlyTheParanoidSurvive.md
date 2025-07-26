@@ -1,5 +1,5 @@
 ---
-title: "Navigating the Business Landscape: Insights from \"Only the Paranoid Survive\""
+title: "Navigating the Business Landscape"
 description: "Insights from Andrew S. Grove's \"Only the Paranoid Survive,\" looking at real-world examples, strategic inflection points, and actionable strategies for businesses to not just weather but thrive in times of crisis..."
 pubDate: "Dec 28 2023"
 heroImage: "/post_img.webp"

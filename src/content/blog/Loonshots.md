@@ -1,5 +1,5 @@
 ---
-title: "Loonshots: How to Nurture the Crazy Ideas That Win Wars, Cure Diseases, and Transform Industries"
+title: "Loonshots"
 description: "organizations should nurture seemingly crazy ideas, as these high-risk, high-reward projects often lead to breakthroughs that win wars, cure diseases, and transform industries...."
 pubDate: "Jun 01 2024"
 heroImage: "/post_img.webp"

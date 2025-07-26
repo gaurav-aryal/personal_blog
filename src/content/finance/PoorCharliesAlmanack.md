@@ -1,5 +1,5 @@
 ---
-title: "Poor Charlie's Almanack: The Wit and Wisdom of Charles T. Munger"
+title: "Poor Charlie's Almanack"
 description: " the wit and wisdom that shaped Warren Buffett's right-hand man, offering readers a multidisciplinary journey through investment philosophy, decision-making principles, and the art of a well-lived life..."
 pubDate: "Jan 10 2024"
 heroImage: "/post_img.webp"

@@ -1,5 +1,5 @@
 ---
-title: " Psychedelics: Opening the horizons of the mind"
+title: "Psychedelics"
 description: " Psychedelics..."
 pubDate: "Mar 20 2023"
 heroImage: "/post_img.webp"

@@ -1,5 +1,5 @@
 ---
-title: "Beyond Footnotes: Building a Career of Exponential Impact"
+title: "Beyond Footnotes"
 description: "embracing continuous learning, growth, and meaningful work that transcends the realm of footnotes and leaves a lasting impact..."
 pubDate: "Jun 26 2023"
 heroImage: "/post_img.webp"

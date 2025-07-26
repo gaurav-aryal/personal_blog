@@ -1,5 +1,5 @@
 ---
-title: "Index Funds vs. Small Business or Franchise: Comparing Investment Options"
+title: "Index Funds vs. Small Business or Franchise"
 description: " the investment options of index funds and small businesses/franchises, discussing the important factors to consider in order to make an informed decision on which investment avenue is better suited for individual financial goals..."
 pubDate: "Jul 02 2023"
 heroImage: "/post_img.webp"

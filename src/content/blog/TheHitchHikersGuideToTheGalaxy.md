@@ -1,5 +1,5 @@
 ---
-title: "The Flawed Ultimate Question: Douglas Adams' Philosophy on the Meaning of Life in The Hitchhiker's Guide to the Galaxy"
+title: "The Flawed Ultimate Question"
 description: "Explores Douglas Adams' philosophical take on the ultimate question of the meaning of life, universe, and everything in The Hitchhiker's Guide to the Galaxy and why he suggests that it is the question itself that is flawed...."
 pubDate: "Apr 21 2023"
 heroImage: "/post_img.webp"

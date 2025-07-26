@@ -1,5 +1,5 @@
 ---
-title: "Understanding Hashtables: A Powerful Data Structure for Efficient Key-Value Storage"
+title: "Understanding Hashtables"
 description: "the concept of hashtables, their practical implementation in Python, and how they enable efficient key-value storage and retrieval..."
 pubDate: "May 31 2023"
 heroImage: "/post_img.webp"

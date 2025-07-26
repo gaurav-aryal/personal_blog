@@ -1,5 +1,5 @@
 ---
-title: "The Wealth Paradox: Why Saving Alone Doesn't Make the Poor Rich"
+title: "The Wealth Paradox"
 description: "the concept of wealth creation and the disparity between the poor and the rich, highlighting how leveraging good debts and investing in income-generating assets can contribute to the financial success of the wealthy..."
 pubDate: "Jul 12 2023"
 heroImage: "/post_img.webp"

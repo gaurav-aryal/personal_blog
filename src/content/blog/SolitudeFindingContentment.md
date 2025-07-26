@@ -1,5 +1,5 @@
 ---
-title: "The Art of Solitude: Finding Contentment in Being Alone"
+title: "The Art of Solitude"
 description: "The art of solitude and how to find contentment in being alone, while also acknowledging the importance of social interaction and companionship..."
 pubDate: "Apr 1 2023"
 heroImage: "/post_img.webp"

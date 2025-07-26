@@ -1,5 +1,5 @@
 ---
-title: "The Essays of Warren Buffett: Lessons for Corporate America"
+title: "The Essays of Warren Buffett"
 description: "the investment wisdom and corporate insights shared by the legendary investor himself..."
 pubDate: "Jun 19 2023"
 heroImage: "/post_img.webp"

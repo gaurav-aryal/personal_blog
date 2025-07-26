@@ -1,5 +1,5 @@
 ---
-title: "The ONE Thing: The Surprisingly Simple Truth About Extraordinary Results"
+title: "The ONE Thing"
 description: "extraordinary results and a life of purpose and fulfillment by focusing on what truly matters to you..."
 pubDate: "Jul 17 2023"
 heroImage: "/post_img.webp"

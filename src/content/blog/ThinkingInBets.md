@@ -1,5 +1,5 @@
 ---
-title: "Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts"
+title: "Thinking in Bets"
 description: "how to make smarter decisions in an uncertain world with insights from Annie Duke's Thinking in Bets, blending poker strategy with cognitive psychology..."
 pubDate: "July 12 2024"
 heroImage: "/post_img.webp"

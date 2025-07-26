@@ -1,5 +1,5 @@
 ---
-title: "The Most Important Thing: Uncommon Sense for the Thoughtful Investor"
+title: "The Most Important Thing"
 description: "Howard Marks' investment wisdom as explored in 'The Most Important Thing: Uncommon Sense for the Thoughtful Investor,' a guide offering valuable lessons on mastering risk, understanding market cycles, and cultivating the uncommon sense necessary for successful investing..."
 pubDate: "Jan 3 2024"
 heroImage: "/post_img.webp"

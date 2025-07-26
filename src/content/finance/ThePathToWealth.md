@@ -1,5 +1,5 @@
 ---
-title: "The Path to Wealth: Embrace Discomfort Today for Assets You'll Love Tomorrow"
+title: "The Path to Wealth"
 description: "the power of embracing discomfort today to secure assets that will pave the way for your financial freedom and long-term success..."
 pubDate: "09/10/2023"
 heroImage: "/post_img.webp"

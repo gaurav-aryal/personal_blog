@@ -1,5 +1,5 @@
 ---
-title: "From Start to Finish: Effective Strategies for Completing Projects"
+title: "From Start to Finish"
 description: "practical strategies for completing projects, from breaking down tasks into manageable chunks to creating accountability measures and staying motivated...."
 pubDate: "Mar 29 2023"
 heroImage: "/post_img.webp"

@@ -1,5 +1,5 @@
 ---
-title: "Database Performance: Best Practices for Efficient Data Access"
+title: "Database Performance"
 description: "Learn how to optimize your database performance and achieve efficient data access by implementing best practices and strategies that can significantly enhance the speed, scalability, and reliability of your applications..."
 pubDate: "Jun 7 2023"
 heroImage: "/post_img.webp"

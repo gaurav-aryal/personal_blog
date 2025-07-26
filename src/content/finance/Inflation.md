@@ -1,5 +1,5 @@
 ---
-title: "Inflation: Causes, Effects, and Management"
+title: "Inflation"
 description: "causes, effects, and strategies employed to manage the complex economic phenomenon that impacts purchasing power and shapes financial landscapes..."
 pubDate: "08/14/2023"
 heroImage: "/post_img.webp"

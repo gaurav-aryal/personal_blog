@@ -1,5 +1,5 @@
 ---
-title: "The Wealth of Nations by Adam Smith: A Summary"
+title: "The Wealth of Nations by Adam Smith"
 description: "modern economic theory by making a case for free market capitalism and minimal government intervention as the best way to increase productivity and create national prosperity..."
 pubDate: "Apr 21 2024"
 heroImage: "/post_img.webp"

@@ -1,5 +1,5 @@
 ---
-title: "A Random Walk Down Wall Street: Unveiling the Time-Tested Strategy for Successful Investing"
+title: "A Random Walk Down Wall Street"
 description: " the benefits of passive investing, asset allocation, and long-term thinking for successful investment strategies..."
 pubDate: "Jun 21 2023"
 heroImage: "/post_img.webp"

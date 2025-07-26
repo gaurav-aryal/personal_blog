@@ -1,5 +1,5 @@
 ---
-title: "Building Resilient Web Applications: Best Practices and Strategies"
+title: "Building Resilient Web Applications"
 description: "building resilient web applications that can withstand failures, scale effortlessly, and deliver an exceptional user experience with these best practices and strategies..."
 pubDate: "Jun 05 2023"
 heroImage: "/post_img.webp"

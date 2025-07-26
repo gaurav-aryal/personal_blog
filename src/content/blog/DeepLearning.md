@@ -1,5 +1,5 @@
 ---
-title: "Deep Learning: A Breakthrough in Machine Learning"
+title: "Deep Learning"
 description: "an overview of deep learning, a type of machine learning that involves training artificial neural networks to learn and make predictions based on complex data..."
 pubDate: "Mar 27 2023"
 heroImage: "/post_img.webp"

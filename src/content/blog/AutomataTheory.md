@@ -1,5 +1,5 @@
 ---
-title: "Automata Theory: The Building Blocks of Computation"
+title: "Automata Theory"
 description: "the fundamental concepts, models, and applications that underpin the study of abstract machines and their role in modern computer science..."
 pubDate: "Jul 21 2023"
 heroImage: "/post_img.webp"

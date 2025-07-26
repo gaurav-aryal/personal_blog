@@ -1,5 +1,5 @@
 ---
-title: "How Not to Be Wrong: The Power of Mathematical Thinking"
+title: "How Not to Be Wrong"
 description: "how mathematical reasoning is not just a tool for academics, but a powerful framework for understanding the world, navigating uncertainty, challenging assumptions, and making better decisions in our increasingly complex society..."
 pubDate: "Mar 17 2024"
 heroImage: "/post_img.webp"

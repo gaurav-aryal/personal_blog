@@ -1,5 +1,5 @@
 ---
-title: "Computation: Heart of Computer Science"
+title: "Computation"
 description: "What is Computation?
 Computation is the process of performing a set of instructions or algorithms on data to produce a result. In computer science, computation..."
 pubDate: "Mar 12 2023"

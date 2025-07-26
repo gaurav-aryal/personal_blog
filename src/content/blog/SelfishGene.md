@@ -1,5 +1,5 @@
 ---
-title: "The Selfish Gene, Altruism, and Mimetic Theory: Exploring Biological and Cultural Evolution"
+title: "The Selfish Gene, Altruism, and Mimetic Theory"
 description: "The ideas of biological evolution through the lens of Richard Dawkins' \"The Selfish Gene\" and Rene Girard's mimetic theory..."
 pubDate: "Mar 29 2023"
 heroImage: "/post_img.webp"

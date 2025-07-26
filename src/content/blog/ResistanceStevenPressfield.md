@@ -1,5 +1,5 @@
 ---
-title: "Overcoming Resistance: Strategies for Defeating the Enemy of Creativity"
+title: "Overcoming Resistance"
 description: "resistance as anything that keeps us from doing what we know we should be doing, whether it's procrastination, fear, self-doubt, or any other obstacle that gets in the way of our progress..."
 pubDate: "Mar 26 2023"
 heroImage: "/post_img.webp"

@@ -1,5 +1,5 @@
 ---
-title: "Hashmaps: An Efficient Key-Value Storage Data Structure"
+title: "Hashmaps"
 description: "A guide to implementing and utilizing the Hashmap data structure, along with an analysis of its time complexity..."
 pubDate: "Jun 1 2023"
 heroImage: "/post_img.webp"

@@ -1,5 +1,5 @@
 ---
-title: "Skin in the Game: Hidden Asymmetries in Daily Life"
+title: "Skin in the Game"
 description: "Nassim Nicholas Taleb's Skin in the Game to understand the crucial role of shared risk and accountability in ethical decision-making and everyday life..."
 pubDate: "July 13 2024"
 heroImage: "/post_img.webp"

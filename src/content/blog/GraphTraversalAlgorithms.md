@@ -1,5 +1,5 @@
 ---
-title: "Graph Traversal Algorithms: Depth-First Search and Breadth-First Search"
+title: "Graph Traversal Algorithms"
 description: "the concepts of Depth-First Search (DFS) and Breadth-First Search (BFS) in Python, providing an in-depth explanation of each algorithm and their implementation, along with their use cases and comparisons..."
 pubDate: "May 28 2023"
 heroImage: "/post_img.webp"

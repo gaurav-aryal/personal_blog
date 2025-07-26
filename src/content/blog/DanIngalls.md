@@ -1,5 +1,5 @@
 ---
-title: "Dan Ingalls: The Pioneer of Smalltalk Programming and Graphical User Interfaces"
+title: "Dan Ingalls"
 description: "The life and contributions of Dan Ingalls, a computer science pioneer known for his groundbreaking work on the Smalltalk programming language and the development of graphical user interfaces..."
 pubDate: "May 16 2023"
 heroImage: "/post_img.webp"

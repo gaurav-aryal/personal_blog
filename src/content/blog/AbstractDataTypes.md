@@ -1,5 +1,5 @@
 ---
-title: "Abstract Data Types: The Building Blocks of Efficient and Modular Programming"
+title: "Abstract Data Types"
 description: "Abstract Data Types' features, benefits, and implementation techniques for designing efficient and modular programming solutions..."
 pubDate: "May 24 2023"
 heroImage: "/post_img.webp"

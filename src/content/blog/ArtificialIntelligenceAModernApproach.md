@@ -1,5 +1,5 @@
 ---
-title: "Artificial Intelligence: A Modern Approach"
+title: "Artificial Intelligence"
 description: "the key concepts of artificial intelligence from the book 'Artificial Intelligence: A Modern Approach'..."
 pubDate: "08/27/2023"
 heroImage: "/post_img.webp"

@@ -1,5 +1,5 @@
 ---
-title: "The Most Important Thing: Essential Wisdom from Howard Marks"
+title: "The Most Important Thing"
 description: "Deep dive into Howard Marks' investment philosophy and how it aligns with Warren Buffett's value investing principles while offering unique insights on market psychology and risk management"
 pubDate: "Feb 10 2025"
 heroImage: "/post_img.webp"
