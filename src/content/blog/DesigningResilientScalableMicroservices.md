@@ -70,7 +70,7 @@ In regulated domains like healthcare, backend services must process millions of 
 - Custom dashboards for latency, error rates, and throughput.
 - Alerting on SLO/SLA violations.
 
-## Interview Talking Points
+## Main Topics
 
 - **Fault Tolerance:** Circuit breakers, retries, and bulkheads.
 - **Horizontal Scaling:** Statelessness, auto-scaling, and partitioning.
