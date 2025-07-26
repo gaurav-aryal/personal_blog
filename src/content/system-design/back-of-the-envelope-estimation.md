@@ -94,3 +94,82 @@ Focus on the process, not just the exact result. Interviewers assess your proble
 *   **Document Assumptions:** Clearly state all assumptions you make during the estimation process.
 *   **Label Units:** Always specify units (e.g., "5 MB" instead of "5") to avoid ambiguity.
 *   **Practice Common Estimations:** Familiarize yourself with estimating QPS, peak QPS, storage, cache, and server counts. Practice is key. 
+
+---
+
+Based on your screenshot, you are using **Vercel Analytics** for your Astro-based personal blog, but you are not seeing any visitors or page views being tracked.
+
+Here’s a checklist to help you troubleshoot and get analytics working:
+
+---
+
+### 1. **Install the Analytics Package**
+Make sure you have installed the Vercel Analytics package in your project:
+```sh
+npm install @vercel/analytics
+```
+or
+```sh
+yarn add @vercel/analytics
+```
+
+---
+
+### 2. **Add the Analytics Component**
+You need to import and use the `<Analytics />` component in your Astro project, typically in your main layout (e.g., `src/layouts/BaseLayout.astro` or similar):
+
+```astro
+---
+import { Analytics } from '@vercel/analytics/react';
+---
+<html>
+  <body>
+    <!-- ... your content ... -->
+    <Analytics />
+  </body>
+</html>
+```
+- If you are using Astro 3.x or later, you may need to use the [Astro integration for Vercel Analytics](https://vercel.com/docs/analytics/quickstart#astro).
+
+---
+
+### 3. **Deploy Your Site**
+Analytics only works on your deployed site (not locally). Make sure you have deployed your site to Vercel and are visiting the production URL (e.g., `https://your-site.vercel.app`).
+
+---
+
+### 4. **Visit Your Site**
+After deployment, visit your site in an incognito/private window to generate some page views. Wait a few minutes and refresh the analytics dashboard.
+
+---
+
+### 5. **Check for Ad/Content Blockers**
+- Some browser extensions (like uBlock Origin, AdBlock, etc.) can block analytics scripts.
+- Try disabling these extensions or use a different browser.
+
+---
+
+### 6. **Check Console for Errors**
+- Open your browser’s developer console on your deployed site and look for any errors related to analytics.
+
+---
+
+### 7. **Verify Environment**
+- Make sure you are looking at the correct environment in the Vercel dashboard (Production, Preview, etc.).
+
+---
+
+### 8. **Astro SSR vs. Static**
+- If you are using Astro in static mode, the analytics script should still work, but if you have custom server logic, ensure nothing is interfering with the analytics script.
+
+---
+
+## If You Still Don’t See Data
+
+- **Double-check the deployment:** Make sure the latest code (with `<Analytics />` added) is deployed.
+- **Try a hard refresh** on your site and the Vercel dashboard.
+- **Check Vercel documentation:** [Vercel Analytics for Astro](https://vercel.com/docs/analytics/quickstart#astro)
+
+---
+
+If you want, I can check your layout file to ensure the `<Analytics />` component is correctly added. Would you like to share your main layout file (e.g., `BaseLayout.astro`)? 

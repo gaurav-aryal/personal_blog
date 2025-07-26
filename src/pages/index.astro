@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
+import Analytics from '@vercel/analytics/astro';
 
 // Get projects and blog posts using content collections
 const projects = await getCollection('projects');
@@ -140,6 +141,7 @@ const blogPosts = await getCollection('blog');
 			</section>
 		</main>
 		<Footer />
+		<Analytics />
 	</body>
 </html>
 
