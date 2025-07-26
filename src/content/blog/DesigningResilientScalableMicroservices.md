@@ -8,7 +8,7 @@ tags: ["system design", "microservices", "resilience", "scalability", "AWS", "Sp
 
 ## Introduction
 
-Modern enterprise systems demand architectures that are both resilient and scalable. As organizations like Amazon, Meta, and PayPal have shown, the ability to handle failures gracefully and scale horizontally is not just a luxury—it's a necessity. This post synthesizes lessons from *Designing Data-Intensive Applications* with hands-on experience building Medicaid and SNAP backend pipelines, ECS deployments, and observability-first services.
+Modern enterprise systems demand architectures that are both resilient and scalable. As organizations like Amazon, Meta, and PayPal have shown, the ability to handle failures gracefully and scale horizontally is not just a luxury—it's a necessity.
 
 ## Why Resilience and Scalability Matter
 
