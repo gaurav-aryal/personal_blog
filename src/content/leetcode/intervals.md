@@ -153,34 +153,22 @@ class Solution {
 ```java
 class Solution {
     public int minMeetingRooms(int[][] intervals) {
-        if (intervals.length == 0) return 0;
-        
-        // Sort start times and end times
-        int[] starts = new int[intervals.length];
-        int[] ends = new int[intervals.length];
-        
-        for (int i = 0; i < intervals.length; i++) {
-            starts[i] = intervals[i][0];
-            ends[i] = intervals[i][1];
-        }
-        
-        Arrays.sort(starts);
-        Arrays.sort(ends);
-        
-        int rooms = 0;
-        int endIndex = 0;
-        
-        for (int start : starts) {
-            if (start < ends[endIndex]) {
-                // Need a new room
-                rooms++;
-            } else {
-                // Reuse a room
-                endIndex++;
+        //sort the array by the interval's start ime
+        Arrays.sort( intervals, (a, b) -> a[0] - b[0] );
+
+        //define a min heap
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+        for(int[] interval: intervals){
+            //check if we can re-use the room free for re-use
+            if(!minHeap.isEmpty() && minHeap.peek()<=interval[0]){
+                minHeap.poll();
             }
+            //add the current interval's end time
+            minHeap.offer(interval[1]);
         }
-        
-        return rooms;
+
+        return minHeap.size();
     }
 }
 ```
