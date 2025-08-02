@@ -63,6 +63,13 @@ const systemDesignSchema = z.object({
     order: z.number(),
 });
 
+const blind75Schema = z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    order: z.number().optional(),
+});
+
 
 export type BlogSchema = z.infer<typeof blogSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
@@ -71,6 +78,7 @@ export type NeuralNexusSchema = z.infer<typeof neuralnexusSchema>;
 export type FinanceSchema = z.infer<typeof financeSchema>;
 export type LeetcodeSchema = z.infer<typeof leetcodeSchema>;
 export type SystemDesignSchema = z.infer<typeof systemDesignSchema>;
+export type Blind75Schema = z.infer<typeof blind75Schema>;
 
 const blogCollection = defineCollection({ schema: blogSchema });
 const storeCollection = defineCollection({ schema: storeSchema });
@@ -79,6 +87,7 @@ const neuralnexusCollection = defineCollection({ schema: neuralnexusSchema });
 const financeCollection = defineCollection({ schema: financeSchema });
 const leetcodeCollection = defineCollection({ schema: leetcodeSchema });
 const systemDesignCollection = defineCollection({ schema: systemDesignSchema });
+const blind75Collection = defineCollection({ schema: blind75Schema });
 
 const projectsCollection = defineCollection({
     type: 'content',
@@ -98,4 +107,5 @@ export const collections = {
     'finance': financeCollection,
     'leetcode': leetcodeCollection,
     'system-design': systemDesignCollection,
+    'blind75': blind75Collection,
 }
