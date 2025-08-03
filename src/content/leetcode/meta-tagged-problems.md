@@ -1725,8 +1725,47 @@ class Solution {
 }
 ```
 
+---
+
+## 38. Evaluate Reverse Polish Notation (Medium)
+
+**Problem:** You are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation. Evaluate the expression. Return an integer that represents the value of the expression.
+
+**Example:**
+```
+Input: tokens = ["2","1","+","3","*"]
+Output: 9
+```
+
+**Solution:**
+```java
+class Solution {
+    public int evalRPN(String[] tokens) {
+        Stack<Integer> stack = new Stack<>();
+        for (String token : tokens) {
+            if (token.equals("+")) {
+                stack.push(stack.pop() + stack.pop());
+            } else if (token.equals("-")) {
+                int a = stack.pop();
+                int b = stack.pop();
+                stack.push(b - a);
+            } else if (token.equals("*")) {
+                stack.push(stack.pop() * stack.pop());
+            } else if (token.equals("/")) {
+                int a = stack.pop();
+                int b = stack.pop();
+                stack.push(b / a);
+            } else {
+                stack.push(Integer.parseInt(token));
+            }
+        }
+        return stack.pop();
+    }
+}
+```
+
 **Time Complexity:** O(n)
-**Space Complexity:** O(1)
+**Space Complexity:** O(n)
 
 ---
 
