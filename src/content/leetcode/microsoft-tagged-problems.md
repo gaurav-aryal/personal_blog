@@ -1,10 +1,10 @@
 ---
-title: "Meta Tagged LeetCode Problems and Solutions"
-description: "Comprehensive solutions for Meta tagged LeetCode problems with Java implementations, time and space complexity analysis."
+title: "Microsoft Tagged LeetCode Problems and Solutions"
+description: "Comprehensive solutions for Microsoft tagged LeetCode problems with Java implementations, time and space complexity analysis."
 date: "2024-12-27"
-order: 21
+order: 24
 ---
-This section covers Meta tagged LeetCode problems with detailed solutions, examples, and complexity analysis. These problems are commonly asked in Meta interviews and represent important algorithmic concepts.
+This section covers Microsoft tagged LeetCode problems with detailed solutions, examples, and complexity analysis. These problems are commonly asked in Microsoft interviews and represent important algorithmic concepts.
 
 ## 1. Two Sum (Easy)
 
@@ -609,17 +609,488 @@ class Solution {
 
 ---
 
+## 16. LRU Cache (Medium)
+
+**Problem:** Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+
+**Example:**
+```
+Input: ["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]
+       [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
+Output: [null, null, null, 1, null, -1, null, -1, 3, 4]
+```
+
+**Solution:**
+```java
+class LRUCache {
+    private Map<Integer, Node> cache;
+    private int capacity;
+    private Node head, tail;
+    
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
+        cache = new HashMap<>();
+        head = new Node(0, 0);
+        tail = new Node(0, 0);
+        head.next = tail;
+        tail.prev = head;
+    }
+    
+    public int get(int key) {
+        if (cache.containsKey(key)) {
+            Node node = cache.get(key);
+            remove(node);
+            add(node);
+            return node.value;
+        }
+        return -1;
+    }
+    
+    public void put(int key, int value) {
+        if (cache.containsKey(key)) {
+            remove(cache.get(key));
+        }
+        if (cache.size() >= capacity) {
+            remove(tail.prev);
+        }
+        add(new Node(key, value));
+    }
+    
+    private void add(Node node) {
+        cache.put(node.key, node);
+        node.next = head.next;
+        node.prev = head;
+        head.next.prev = node;
+        head.next = node;
+    }
+    
+    private void remove(Node node) {
+        cache.remove(node.key);
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+    }
+    
+    class Node {
+        int key, value;
+        Node prev, next;
+        Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+}
+```
+
+**Time Complexity:** O(1) for both get and put operations
+**Space Complexity:** O(capacity)
+
+---
+
+## 17. Number of Islands (Medium)
+
+**Problem:** Given an `m x n` 2D binary grid `grid` which represents a map of `'1'`s (land) and `'0'`s (water), return the number of islands.
+
+**Example:**
+```
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+Output: 3
+```
+
+**Solution:**
+```java
+class Solution {
+    public int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0) return 0;
+        
+        int numIslands = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == '1') {
+                    numIslands++;
+                    dfs(grid, i, j);
+                }
+            }
+        }
+        return numIslands;
+    }
+    
+    private void dfs(char[][] grid, int i, int j) {
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == '0') {
+            return;
+        }
+        
+        grid[i][j] = '0';
+        dfs(grid, i + 1, j);
+        dfs(grid, i - 1, j);
+        dfs(grid, i, j + 1);
+        dfs(grid, i, j - 1);
+    }
+}
+```
+
+**Time Complexity:** O(m × n)
+**Space Complexity:** O(m × n)
+
+---
+
+## 18. Longest Palindromic Substring (Medium)
+
+**Problem:** Given a string `s`, return the longest palindromic substring in `s`.
+
+**Example:**
+```
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+```
+
+**Solution:**
+```java
+class Solution {
+    public String longestPalindrome(String s) {
+        if (s == null || s.length() < 2) return s;
+        
+        int start = 0, maxLength = 1;
+        
+        for (int i = 0; i < s.length(); i++) {
+            int len1 = expandAroundCenter(s, i, i);
+            int len2 = expandAroundCenter(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            
+            if (len > maxLength) {
+                start = i - (len - 1) / 2;
+                maxLength = len;
+            }
+        }
+        
+        return s.substring(start, start + maxLength);
+    }
+    
+    private int expandAroundCenter(String s, int left, int right) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+        return right - left - 1;
+    }
+}
+```
+
+**Time Complexity:** O(n²)
+**Space Complexity:** O(1)
+
+---
+
+## 19. House Robber (Medium)
+
+**Problem:** You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
+
+**Example:**
+```
+Input: nums = [1,2,3,1]
+Output: 4
+Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
+Total amount you can rob = 1 + 3 = 4.
+```
+
+**Solution:**
+```java
+class Solution {
+    public int rob(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        if (nums.length == 1) return nums[0];
+        
+        int prev2 = nums[0];
+        int prev1 = Math.max(nums[0], nums[1]);
+        
+        for (int i = 2; i < nums.length; i++) {
+            int current = Math.max(prev1, prev2 + nums[i]);
+            prev2 = prev1;
+            prev1 = current;
+        }
+        
+        return prev1;
+    }
+}
+```
+
+**Time Complexity:** O(n)
+**Space Complexity:** O(1)
+
+---
+
+## 20. Trapping Rain Water (Hard)
+
+**Problem:** Given `n` non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+
+**Example:**
+```
+Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+```
+
+**Solution:**
+```java
+class Solution {
+    public int trap(int[] height) {
+        if (height == null || height.length < 3) return 0;
+        
+        int left = 0, right = height.length - 1;
+        int leftMax = 0, rightMax = 0;
+        int water = 0;
+        
+        while (left < right) {
+            if (height[left] < height[right]) {
+                if (height[left] >= leftMax) {
+                    leftMax = height[left];
+                } else {
+                    water += leftMax - height[left];
+                }
+                left++;
+            } else {
+                if (height[right] >= rightMax) {
+                    rightMax = height[right];
+                } else {
+                    water += rightMax - height[right];
+                }
+                right--;
+            }
+        }
+        
+        return water;
+    }
+}
+```
+
+**Time Complexity:** O(n)
+**Space Complexity:** O(1)
+
+---
+
+## 21. Median of Two Sorted Arrays (Hard)
+
+**Problem:** Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return the median of the two sorted arrays.
+
+**Example:**
+```
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+```
+
+**Solution:**
+```java
+class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        if (nums1.length > nums2.length) {
+            return findMedianSortedArrays(nums2, nums1);
+        }
+        
+        int x = nums1.length;
+        int y = nums2.length;
+        int low = 0, high = x;
+        
+        while (low <= high) {
+            int partitionX = (low + high) / 2;
+            int partitionY = (x + y + 1) / 2 - partitionX;
+            
+            int maxLeftX = (partitionX == 0) ? Integer.MIN_VALUE : nums1[partitionX - 1];
+            int minRightX = (partitionX == x) ? Integer.MAX_VALUE : nums1[partitionX];
+            
+            int maxLeftY = (partitionY == 0) ? Integer.MIN_VALUE : nums2[partitionY - 1];
+            int minRightY = (partitionY == y) ? Integer.MAX_VALUE : nums2[partitionY];
+            
+            if (maxLeftX <= minRightY && maxLeftY <= minRightX) {
+                if ((x + y) % 2 == 0) {
+                    return (Math.max(maxLeftX, maxLeftY) + Math.min(minRightX, minRightY)) / 2.0;
+                } else {
+                    return Math.max(maxLeftX, maxLeftY);
+                }
+            } else if (maxLeftX > minRightY) {
+                high = partitionX - 1;
+            } else {
+                low = partitionX + 1;
+            }
+        }
+        
+        throw new IllegalArgumentException();
+    }
+}
+```
+
+**Time Complexity:** O(log(min(m, n)))
+**Space Complexity:** O(1)
+
+---
+
+## 22. Minimum Window Substring (Hard)
+
+**Problem:** Given two strings `s` and `t` of lengths `m` and `n` respectively, return the minimum window substring of `s` such that every character in `t` (including duplicates) is included in the window.
+
+**Example:**
+```
+Input: s = "ADOBECODEBANC", t = "ABC"
+Output: "BANC"
+```
+
+**Solution:**
+```java
+class Solution {
+    public String minWindow(String s, String t) {
+        if (s.length() == 0 || t.length() == 0) return "";
+        
+        Map<Character, Integer> dictT = new HashMap<>();
+        for (char c : t.toCharArray()) {
+            dictT.put(c, dictT.getOrDefault(c, 0) + 1);
+        }
+        
+        int required = dictT.size();
+        int formed = 0;
+        Map<Character, Integer> windowCounts = new HashMap<>();
+        
+        int left = 0, right = 0;
+        int[] ans = {-1, 0, 0};
+        
+        while (right < s.length()) {
+            char c = s.charAt(right);
+            windowCounts.put(c, windowCounts.getOrDefault(c, 0) + 1);
+            
+            if (dictT.containsKey(c) && windowCounts.get(c).intValue() == dictT.get(c).intValue()) {
+                formed++;
+            }
+            
+            while (left <= right && formed == required) {
+                c = s.charAt(left);
+                
+                if (ans[0] == -1 || right - left + 1 < ans[0]) {
+                    ans[0] = right - left + 1;
+                    ans[1] = left;
+                    ans[2] = right;
+                }
+                
+                windowCounts.put(c, windowCounts.get(c) - 1);
+                if (dictT.containsKey(c) && windowCounts.get(c).intValue() < dictT.get(c).intValue()) {
+                    formed--;
+                }
+                left++;
+            }
+            right++;
+        }
+        
+        return ans[0] == -1 ? "" : s.substring(ans[1], ans[2] + 1);
+    }
+}
+```
+
+**Time Complexity:** O(|S| + |T|)
+**Space Complexity:** O(k) where k is the number of unique characters in T
+
+---
+
+## 23. Search in Rotated Sorted Array (Medium)
+
+**Problem:** There is an integer array `nums` sorted in ascending order (with distinct values). Prior to being passed to your function, `nums` is possibly rotated at an unknown pivot index `k` (1 <= k < nums.length) such that the resulting array is `[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]`.
+
+**Example:**
+```
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+```
+
+**Solution:**
+```java
+class Solution {
+    public int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (nums[mid] == target) {
+                return mid;
+            }
+            
+            if (nums[left] <= nums[mid]) {
+                if (nums[left] <= target && target < nums[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else {
+                if (nums[mid] < target && target <= nums[right]) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+        }
+        
+        return -1;
+    }
+}
+```
+
+**Time Complexity:** O(log n)
+**Space Complexity:** O(1)
+
+---
+
+## 24. Jump Game II (Medium)
+
+**Problem:** Given an array of non-negative integers `nums`, you are initially positioned at the first index, and each element in the array represents your maximum jump length at that position. Return the minimum number of jumps to reach the last index.
+
+**Example:**
+```
+Input: nums = [2,3,1,1,4]
+Output: 2
+Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index.
+```
+
+**Solution:**
+```java
+class Solution {
+    public int jump(int[] nums) {
+        int jumps = 0, currentEnd = 0, farthest = 0;
+        
+        for (int i = 0; i < nums.length - 1; i++) {
+            farthest = Math.max(farthest, i + nums[i]);
+            
+            if (i == currentEnd) {
+                jumps++;
+                currentEnd = farthest;
+            }
+        }
+        
+        return jumps;
+    }
+}
+```
+
+**Time Complexity:** O(n)
+**Space Complexity:** O(1)
+
+---
+
 ## Summary
 
-These Meta tagged problems cover essential algorithmic concepts including:
+These Microsoft tagged problems cover essential algorithmic concepts including:
 
 - **Arrays & Hashing:** Two Sum, Valid Anagram
 - **Two Pointers:** Container With Most Water, 3Sum
-- **Sliding Window:** Longest Substring Without Repeating Characters
+- **Sliding Window:** Longest Substring Without Repeating Characters, Minimum Window Substring
 - **Stack:** Valid Parentheses
-- **Linked Lists:** Merge Two Sorted Lists, Add Two Numbers, Remove Nth Node
-- **Dynamic Programming:** Climbing Stairs, Maximum Subarray
+- **Linked Lists:** Merge Two Sorted Lists, Add Two Numbers, Remove Nth Node, Merge k Sorted Lists
+- **Dynamic Programming:** Climbing Stairs, Maximum Subarray, House Robber
 - **Backtracking:** Letter Combinations, Generate Parentheses
-- **Heap:** Merge k Sorted Lists
+- **Graph:** Number of Islands
+- **Design:** LRU Cache
+- **String:** Longest Palindromic Substring
+- **Greedy:** Trapping Rain Water, Jump Game II
+- **Binary Search:** Median of Two Sorted Arrays, Search in Rotated Sorted Array
 
-Each solution includes detailed explanations, time and space complexity analysis, and follows best practices for coding interviews. 
+Each solution includes detailed explanations, time and space complexity analysis, and follows best practices for coding interviews. These problems are commonly asked in Microsoft technical interviews and represent the core algorithmic concepts that candidates should master. 

@@ -1,12 +1,9 @@
 ---
 title: "Amazon Tagged LeetCode Problems and Solutions"
 description: "Comprehensive solutions for Amazon tagged LeetCode problems with Java implementations, time and space complexity analysis."
-date: "2025-01-27"
+date: "2024-12-27"
 order: 22
 ---
-
-# Amazon Tagged LeetCode Problems and Solutions
-
 This section covers Amazon tagged LeetCode problems with detailed solutions, examples, and complexity analysis. These problems are commonly asked in Amazon interviews and represent important algorithmic concepts.
 
 ## 1. Two Sum (Easy)
