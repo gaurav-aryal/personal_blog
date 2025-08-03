@@ -127,6 +127,5 @@ Every network hop is a potential attack vector. Enforcing authentication, author
 ### Mitigations
 Zero-trust networking, centralized identity providers, short-lived credentials, and hardware security modules help. Books repeatedly stress defense in depth: combine network policies, application-layer authorization, and rigorous secret management.
 
-## Conclusion
 System design is an exercise in trade-offs. The ten challenges above appear in nearly every distributed system, and the literature shows that no silver bullet exists. Architects must weigh consistency against availability, favor simplicity where possible, and continually revisit assumptions as scale and requirements evolve.
 
