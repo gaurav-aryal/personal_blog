@@ -6,7 +6,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 
 const posts = await getCollection('leetcode');
-const sortedPosts = posts.sort((a, b) => a.data.title.localeCompare(b.data.title));
+const sortedPosts = posts.sort((a, b) => {
+  // If both posts have order, sort by order
+  if (a.data.order !== undefined && b.data.order !== undefined) {
+    return a.data.order - b.data.order;
+  }
+  // If only one has order, put the one with order first
+  if (a.data.order !== undefined && b.data.order === undefined) {
+    return -1;
+  }
+  if (a.data.order === undefined && b.data.order !== undefined) {
+    return 1;
+  }
+  // If neither has order, sort alphabetically
+  return a.data.title.localeCompare(b.data.title);
+});
 ---
 
 <html lang="en" class="bg-[#0B1120]">
