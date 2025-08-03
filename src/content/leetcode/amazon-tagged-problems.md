@@ -4,9 +4,6 @@ description: "Comprehensive solutions for Amazon tagged LeetCode problems with J
 date: "2025-01-27"
 order: 22
 ---
-
-# Amazon Tagged LeetCode Problems and Solutions
-
 This section covers Amazon tagged LeetCode problems with detailed solutions, examples, and complexity analysis. These problems are commonly asked in Amazon interviews and represent important algorithmic concepts.
 
 ## 1. LRU Cache (Medium)

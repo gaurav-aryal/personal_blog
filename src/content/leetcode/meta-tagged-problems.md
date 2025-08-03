@@ -4,9 +4,6 @@ description: "Comprehensive solutions for Meta tagged LeetCode problems with Jav
 date: "2025-01-27"
 order: 21
 ---
-
-# Meta Tagged LeetCode Problems and Solutions
-
 This section covers Meta tagged LeetCode problems with detailed solutions, examples, and complexity analysis. These problems are commonly asked in Meta interviews and represent important algorithmic concepts.
 
 ## 1. Minimum Remove to Make Valid Parentheses (Medium)

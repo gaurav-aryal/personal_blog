@@ -4,9 +4,6 @@ description: "Comprehensive solutions for Microsoft tagged LeetCode problems wit
 date: "2025-01-27"
 order: 24
 ---
-
-# Microsoft Tagged LeetCode Problems and Solutions
-
 This section covers Microsoft tagged LeetCode problems with detailed solutions, examples, and complexity analysis. These problems are commonly asked in Microsoft interviews and represent important algorithmic concepts.
 
 ## 1. Two Sum (Easy)
