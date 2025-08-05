@@ -20,33 +20,38 @@ Output: "lee(t(c)o)de"
 ```java
 class Solution {
     public String minRemoveToMakeValid(String s) {
-        StringBuilder sb = new StringBuilder();
-        int open = 0;
-        
-        for (char c : s.toCharArray()) {
+        Stack<Integer> stack = new Stack<>();
+        Set<Integer> indexesToRemove = new HashSet<>();
+
+        // First pass: track unmatched ')' and all '(' positions
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
             if (c == '(') {
-                open++;
-                sb.append(c);
+                stack.push(i);  // Potential match, store the index
             } else if (c == ')') {
-                if (open > 0) {
-                    open--;
-                    sb.append(c);
+                if (!stack.isEmpty()) {
+                    stack.pop();  // Found a matching '('
+                } else {
+                    indexesToRemove.add(i);  // Unmatched ')'
                 }
-            } else {
-                sb.append(c);
             }
         }
-        
+
+        // Add remaining unmatched '(' indices to removal set
+        while (!stack.isEmpty()) {
+            indexesToRemove.add(stack.pop());
+        }
+
+        // Build result string excluding invalid indices
         StringBuilder result = new StringBuilder();
-        for (int i = sb.length() - 1; i >= 0; i--) {
-            if (sb.charAt(i) == '(' && open > 0) {
-                open--;
-            } else {
-                result.append(sb.charAt(i));
+        for (int i = 0; i < s.length(); i++) {
+            if (!indexesToRemove.contains(i)) {
+                result.append(s.charAt(i));
             }
         }
-        
-        return result.reverse().toString();
+
+        return result.toString();
     }
 }
 ```
