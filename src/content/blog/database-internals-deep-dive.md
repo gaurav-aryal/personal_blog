@@ -1,8 +1,7 @@
 ---
 title: "Database Internals: A Deep Dive into How Distributed Data Systems Work"
-date: 2025-08-17
-draft: false
 description: "Key lessons on storage, transactions, and distributed coordination inspired by Alex Petrov's book."
+pubDate: "Aug 17 2025"
 tags: ["Databases", "Distributed Systems", "Book Notes"]
 ---
 
