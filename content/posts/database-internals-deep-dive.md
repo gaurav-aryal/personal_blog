@@ -1,5 +1,5 @@
 ---
-title: "Reflections on Database Internals"
+title: "Database Internals: A Deep Dive into How Distributed Data Systems Work"
 date: 2025-08-17
 draft: false
 description: "Key lessons on storage, transactions, and distributed coordination inspired by Alex Petrov's book."
@@ -8,11 +8,7 @@ tags: ["Databases", "Distributed Systems", "Book Notes"]
 
 # Reflections on *Database Internals*
 
-After working through Alex Petrov's *Database Internals*, I came away with a deeper appreciation for the machinery that keeps modern data services running. The book is split into two broad parts: the first looks inside single-node storage engines; the second scales out to the world of distributed data systems. Below are the ideas that stuck with me and how they fit together.
-
-## Foundations of Storage Engines
-
-Petrov starts by grounding the reader in the nuts and bolts of storage. A database begins life on disk, so understanding how bytes are organized becomes crucial.
+After working through Alex Petrov's *Database Internals*, I came away with appreciation for the machinery that keeps modern data services running. The book is split into two broad parts: the first looks inside single-node storage engines; the second scales out to the world of distributed data systems. Below are the ideas that stuck with me and how they fit together.
 
 ### Files, Pages, and Buffers
 
@@ -68,8 +64,8 @@ Beyond core algorithms, the book touches on practical operations. Monitoring rep
 
 ## Closing Thoughts
 
-*Database Internals* doesn't read like a theoretical tome—it feels like a field guide. By understanding why a B-tree chooses one page over another or how Raft recovers from a network partition, we become better equipped to design and operate data systems of our own.
+By understanding why a B-tree chooses one page over another or how Raft recovers from a network partition, we become better equipped to design and operate data systems of our own.
 
-For anyone building services that depend on reliable storage and coordination, Petrov's tour of the internals is time well spent. The book reminded me that behind every query result lies a dense web of logs, caches, consensus rounds, and carefully orchestrated trade-offs.
+For anyone building services that depend on reliable storage and coordination, Petrov's guide of the internals is time well spent. The book reminded me that behind every query result lies a dense web of logs, caches, consensus rounds, and carefully orchestrated trade-offs.
 
 
