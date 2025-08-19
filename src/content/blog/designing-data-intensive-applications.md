@@ -1,7 +1,7 @@
 ---
 title: "Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems"
 description: "A comprehensive technical deep-dive into the fundamental principles of building robust data systems at scale, inspired by Martin Kleppmann's seminal work."
-pubDate: "Aug 18 2025"
+pubDate: "Aug 16 2025"
 tags: ["Distributed Systems", "System Design", "Databases", "Architecture", "Book Notes", "Scalability"]
 ---
 
