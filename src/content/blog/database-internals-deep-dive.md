@@ -4,11 +4,6 @@ description: "Key lessons on storage, transactions, and distributed coordination
 pubDate: "Aug 17 2025"
 tags: ["Databases", "Distributed Systems", "Book Notes"]
 ---
-
-# Reflections on *Database Internals*
-
-After working through Alex Petrov's *Database Internals*, I came away with appreciation for the machinery that keeps modern data services running. The book is split into two broad parts: the first looks inside single-node storage engines; the second scales out to the world of distributed data systems. Below are the ideas that stuck with me and how they fit together.
-
 ### Files, Pages, and Buffers
 
 Most engines organize data in fixed-size pages and use a buffer manager to cache those pages in memory. The buffer pool decides which pages stay hot, which are flushed, and how dirty pages are handled. Write-ahead logging (WAL) ensures durability: changes hit the log before data pages are written back, allowing recovery after crashes.
