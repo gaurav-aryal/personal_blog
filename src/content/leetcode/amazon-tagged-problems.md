@@ -100,48 +100,44 @@ Output: "aba"
 
 **Solution:**
 ```java
-class Solution {
+class Solution{
     public String reorganizeString(String s) {
-        int[] count = new int[26];
-        for (char c : s.toCharArray()) {
-            count[c - 'a']++;
+        Map<Character, Integer> sfreq = new HashMap<>();
+        for(int i=0; i<s.length(); i++){
+            char c = s.charAt(i);
+            sfreq.put(c, sfreq.getOrDefault(c, 0)+1);
         }
-        
-        PriorityQueue<Character> pq = new PriorityQueue<>((a, b) -> count[b - 'a'] - count[a - 'a']);
-        for (int i = 0; i < 26; i++) {
-            if (count[i] > 0) {
-                pq.offer((char) (i + 'a'));
-            }
+
+        //make a priorityqueue 
+        PriorityQueue<Map.Entry<Character, Integer>> maxHeap = new PriorityQueue<>((a, b) -> b.getValue()-a.getValue());
+
+        maxHeap.addAll(sfreq.entrySet());
+
+        StringBuffer sb = new StringBuffer();
+
+        //go through heap until it gets all the values from it 
+        while(maxHeap.size()>1){
+            Map.Entry<Character, Integer> first = maxHeap.poll();
+            Map.Entry<Character, Integer> second = maxHeap.poll();
+
+            sb.append(first.getKey());
+            sb.append(second.getKey());
+
+            first.setValue(first.getValue() - 1);
+            if (first.getValue() > 0) maxHeap.offer(first);
+
+            second.setValue(second.getValue() - 1);
+            if (second.getValue() > 0) maxHeap.offer(second);
         }
-        
-        StringBuilder result = new StringBuilder();
-        while (pq.size() >= 2) {
-            char first = pq.poll();
-            char second = pq.poll();
-            
-            result.append(first);
-            result.append(second);
-            
-            count[first - 'a']--;
-            count[second - 'a']--;
-            
-            if (count[first - 'a'] > 0) {
-                pq.offer(first);
-            }
-            if (count[second - 'a'] > 0) {
-                pq.offer(second);
-            }
+
+        // Handle last character (if any)
+        if (!maxHeap.isEmpty()) {
+            Map.Entry<Character, Integer> last = maxHeap.poll();
+            if (last.getValue() > 1) return ""; // can't place it without adjacent duplicate
+            sb.append(last.getKey());
         }
-        
-        if (!pq.isEmpty()) {
-            char last = pq.poll();
-            if (count[last - 'a'] > 1) {
-                return "";
-            }
-            result.append(last);
-        }
-        
-        return result.toString();
+
+        return sb.toString();
     }
 }
 ```
