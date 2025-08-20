@@ -5,9 +5,7 @@ pubDate: "Aug 16 2025"
 tags: ["Distributed Systems", "System Design", "Databases", "Architecture", "Book Notes", "Scalability"]
 ---
 
-## Introduction
-
-Martin Kleppmann's "Designing Data-Intensive Applications" is not just another database book—it's a comprehensive guide to thinking architecturally about data systems. This book teaches you to understand the fundamental trade-offs that every distributed system designer faces: consistency vs. availability, latency vs. throughput, and complexity vs. simplicity.
+Martin Kleppmann's "Designing Data-Intensive Applications" helps us understand the fundamental trade-offs that every distributed system designer faces: consistency vs. availability, latency vs. throughput, and complexity vs. simplicity.
 
 In this technical deep-dive, I'll explore the core concepts that make data-intensive applications reliable, scalable, and maintainable. We'll go beyond surface-level explanations to understand the underlying principles that govern modern data systems.
 
