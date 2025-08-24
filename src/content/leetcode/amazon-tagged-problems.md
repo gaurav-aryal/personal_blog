@@ -195,24 +195,28 @@ Output: 3
 ```java
 class Solution {
     public int maxFrequency(int[] nums, int k) {
-        Arrays.sort(nums);
-        int left = 0, right = 0;
-        long sum = 0;
-        int maxFreq = 0;
-        
-        while (right < nums.length) {
-            sum += nums[right];
-            
-            while ((long) nums[right] * (right - left + 1) - sum > k) {
-                sum -= nums[left];
-                left++;
+        int totalK = 0;
+        for(int num: nums){
+            if(num==k){
+                totalK++;
             }
-            
-            maxFreq = Math.max(maxFreq, right - left + 1);
-            right++;
         }
-        
-        return maxFreq;
+
+        int bestGain = 0;
+        for(int v=1; v<=50; v++){
+            if(v==k){
+                continue;
+            }
+
+            int cur = 0, best = 0;
+            for (int a : nums) {
+                int w = (a == v ? 1 : (a == k ? -1 : 0));
+                cur = Math.max(0, cur + w);
+                best = Math.max(best, cur);
+            }
+            bestGain = Math.max(bestGain, best);
+        }
+        return totalK + bestGain;
     }
 }
 ```
