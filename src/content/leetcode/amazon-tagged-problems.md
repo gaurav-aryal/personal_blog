@@ -323,26 +323,37 @@ class Solution {
 
 **Example:**
 ```
-Input: nums = [1,2,3,4,5], k = 2
-Output: 9
+Input: x = [1,2,1,3,2], y = [5,3,4,6,2]
+
+Output: 14
+
+Explanation:
+
+Choose i = 0 (x[i] = 1, y[i] = 5), j = 1 (x[j] = 2, y[j] = 3), k = 3 (x[k] = 3, y[k] = 6).
+All three values chosen from x are distinct. 5 + 3 + 6 = 14 is the maximum we can obtain. Hence, the output is 14.
+
 ```
 
 **Solution:**
 ```java
 class Solution {
-    public long maximumTripletValue(int[] nums) {
-        int n = nums.length;
-        long maxDiff = 0;
-        int maxNum = 0;
-        long result = 0;
-        
-        for (int i = 0; i < n; i++) {
-            result = Math.max(result, (long) maxDiff * nums[i]);
-            maxDiff = Math.max(maxDiff, maxNum - nums[i]);
-            maxNum = Math.max(maxNum, nums[i]);
+    public int maxSumDistinctTriplet(int[] x, int[] y) {
+        Map<Integer, Integer> best = new HashMap<>();
+        for (int i = 0; i < x.length; i++) {
+            best.merge(x[i], y[i], Math::max);
         }
-        
-        return result;
+
+        if (best.size() < 3) return -1;
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for (int val : best.values()) {
+            pq.offer(val);
+            if (pq.size() > 3) pq.poll();
+        }
+
+        int sum = 0;
+        while (!pq.isEmpty()) sum += pq.poll();
+        return sum;
     }
 }
 ```
