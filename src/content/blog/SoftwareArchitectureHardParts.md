@@ -80,7 +80,7 @@ Perhaps the hardest part of distributed architecture is the human factor. Teams 
 
 Architecture decisions must consider team capabilities and organizational structure. A technically superior architecture that the team cannot effectively operate will fail regardless of its technical merits.
 
-## Conclusion
+## Summary
 
 Distributed architecture is fundamentally about making hard choices and living with their consequences. There are no perfect solutions, only trade-offs that must be carefully considered in the context of business requirements, team capabilities, and operational constraints.
 
