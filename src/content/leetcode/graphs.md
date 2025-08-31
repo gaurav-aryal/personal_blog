@@ -332,44 +332,21 @@ class Solution {
 **Solution:**
 ```java
 class Solution {
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-        List<List<Integer>> graph = new ArrayList<>();
-        for (int i = 0; i < numCourses; i++) {
-            graph.add(new ArrayList<>());
+    public boolean canFinish(int n, int[][] prerequisites) {
+        List<Integer>[] g = new ArrayList[n];
+        int[] indeg = new int[n];
+        for (int i = 0; i < n; i++) g[i] = new ArrayList<>();
+        for (int[] p : prerequisites) { g[p[1]].add(p[0]); indeg[p[0]]++; }
+
+        ArrayDeque<Integer> q = new ArrayDeque<>();
+        for (int i = 0; i < n; i++) if (indeg[i] == 0) q.offer(i);
+
+        int taken = 0;
+        while (!q.isEmpty()) {
+            int u = q.poll(); taken++;
+            for (int v : g[u]) if (--indeg[v] == 0) q.offer(v);
         }
-        
-        for (int[] prerequisite : prerequisites) {
-            graph.get(prerequisite[1]).add(prerequisite[0]);
-        }
-        
-        boolean[] visited = new boolean[numCourses];
-        boolean[] recursionStack = new boolean[numCourses];
-        
-        for (int i = 0; i < numCourses; i++) {
-            if (hasCycle(graph, i, visited, recursionStack)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    private boolean hasCycle(List<List<Integer>> graph, int course, 
-                           boolean[] visited, boolean[] recursionStack) {
-        if (recursionStack[course]) return true;
-        if (visited[course]) return false;
-        
-        visited[course] = true;
-        recursionStack[course] = true;
-        
-        for (int neighbor : graph.get(course)) {
-            if (hasCycle(graph, neighbor, visited, recursionStack)) {
-                return true;
-            }
-        }
-        
-        recursionStack[course] = false;
-        return false;
+        return taken == n; // all courses can be ordered => no cycle
     }
 }
 ```

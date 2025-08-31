@@ -1036,42 +1036,21 @@ Output: true
 **Solution:**
 ```java
 class Solution {
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-        List<List<Integer>> graph = new ArrayList<>();
-        for (int i = 0; i < numCourses; i++) {
-            graph.add(new ArrayList<>());
+    public boolean canFinish(int n, int[][] prerequisites) {
+        List<Integer>[] g = new ArrayList[n];
+        int[] indeg = new int[n];
+        for (int i = 0; i < n; i++) g[i] = new ArrayList<>();
+        for (int[] p : prerequisites) { g[p[1]].add(p[0]); indeg[p[0]]++; }
+
+        ArrayDeque<Integer> q = new ArrayDeque<>();
+        for (int i = 0; i < n; i++) if (indeg[i] == 0) q.offer(i);
+
+        int taken = 0;
+        while (!q.isEmpty()) {
+            int u = q.poll(); taken++;
+            for (int v : g[u]) if (--indeg[v] == 0) q.offer(v);
         }
-        
-        for (int[] prerequisite : prerequisites) {
-            graph.get(prerequisite[1]).add(prerequisite[0]);
-        }
-        
-        boolean[] visited = new boolean[numCourses];
-        boolean[] recStack = new boolean[numCourses];
-        
-        for (int i = 0; i < numCourses; i++) {
-            if (!visited[i] && hasCycle(i, graph, visited, recStack)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    private boolean hasCycle(int node, List<List<Integer>> graph, boolean[] visited, boolean[] recStack) {
-        visited[node] = true;
-        recStack[node] = true;
-        
-        for (int neighbor : graph.get(node)) {
-            if (!visited[neighbor] && hasCycle(neighbor, graph, visited, recStack)) {
-                return true;
-            } else if (recStack[neighbor]) {
-                return true;
-            }
-        }
-        
-        recStack[node] = false;
-        return false;
+        return taken == n; // all courses can be ordered => no cycle
     }
 }
 ```
