@@ -89,32 +89,32 @@ class Solution {
 ```java
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
-        int left = 1;
-        int right = 1;
-        
-        // Find maximum pile size
-        for (int pile : piles) {
-            right = Math.max(right, pile);
-        }
-        
-        while (left < right) {
-            int mid = left + (right - left) / 2;
-            if (canEatAll(piles, h, mid)) {
+        int left = 1, right = getMax(piles);
+
+        int hours = 0;
+        while(left < right){
+            hours = 0;
+            int mid = left + (right - left)/2;
+
+            for(int pile: piles){
+                hours += Math.ceil((double)pile/mid);
+            }
+
+            if(hours<=h){
                 right = mid;
-            } else {
+            } else{
                 left = mid + 1;
             }
         }
-        
         return left;
     }
-    
-    private boolean canEatAll(int[] piles, int h, int k) {
-        int hours = 0;
-        for (int pile : piles) {
-            hours += (pile + k - 1) / k; // Ceiling division
+
+    private int getMax(int[] piles){
+        int max = 0;
+        for(int pile: piles){
+            max = Math.max(max, pile);
         }
-        return hours <= h;
+        return max;
     }
 }
 ```
