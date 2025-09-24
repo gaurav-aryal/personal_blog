@@ -322,25 +322,23 @@ Output: 3
 **Solution:**
 ```java
 class Solution {
-    public int maxFrequency(int[] nums, int k) {
-        Arrays.sort(nums);
-        int left = 0, right = 0;
-        long sum = 0;
-        int maxFreq = 0;
-        
-        while (right < nums.length) {
-            sum += nums[right];
-            
-            while ((long) nums[right] * (right - left + 1) - sum > k) {
-                sum -= nums[left];
-                left++;
-            }
-            
-            maxFreq = Math.max(maxFreq, right - left + 1);
-            right++;
+    public int maxSumDistinctTriplet(int[] x, int[] y) {
+        Map<Integer, Integer> best = new HashMap<>();
+        for (int i = 0; i < x.length; i++) {
+            best.merge(x[i], y[i], Math::max);
         }
-        
-        return maxFreq;
+
+        if (best.size() < 3) return -1;
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for (int val : best.values()) {
+            pq.offer(val);
+            if (pq.size() > 3) pq.poll();
+        }
+
+        int sum = 0;
+        while (!pq.isEmpty()) sum += pq.poll();
+        return sum;
     }
 }
 ```
